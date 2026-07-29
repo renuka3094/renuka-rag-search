@@ -1,0 +1,224 @@
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+}
+
+/* ---------- Layout shell ---------- */
+.app-shell {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  background: var(--bg-inset);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 22px;
+}
+
+.brand-mark .mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--brand-gradient);
+  flex-shrink: 0;
+}
+
+.brand-mark .name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.brand-mark .name span {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-button);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-standard), color 0.15s var(--ease-standard);
+}
+
+.nav-item:hover {
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+  box-shadow: inset 2px 0 0 var(--color-orange);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding: 8px;
+}
+
+.main-panel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-canvas);
+}
+
+/* ---------- Shared primitives ---------- */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  transition: transform 0.18s var(--ease-standard), box-shadow 0.18s var(--ease-standard);
+}
+
+.card.hoverable:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.btn {
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 9px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: filter 0.15s var(--ease-standard), transform 0.1s var(--ease-standard);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brand-gradient);
+  color: var(--text-on-gradient);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+.btn-secondary {
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-orange);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pill {
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pill-success {
+  background: color-mix(in srgb, var(--color-success) 16%, transparent);
+  color: var(--color-success);
+}
+
+.pill-warning {
+  background: color-mix(in srgb, var(--color-warning) 16%, transparent);
+  color: var(--color-warning);
+}
+
+.pill-danger {
+  background: color-mix(in srgb, var(--color-danger) 16%, transparent);
+  color: var(--color-danger);
+}
+
+.pill-neutral {
+  background: var(--bg-surface-raised);
+  color: var(--text-secondary);
+}
+
+.scroll-region {
+  overflow-y: auto;
+}
+
+.scroll-region::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-region::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-tertiary);
+  padding: 60px 20px;
+  text-align: center;
+}

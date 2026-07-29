@@ -1,0 +1,73 @@
+/*
+  DataFactZ design tokens (Handbook Section 7).
+  Every component in this app reads colors, radii, and type scale from
+  here — never hardcode a hex value in a component file. That is what
+  "share a layout shell, color usage, and component style" across all
+  three Week apps means in practice: copy this file into the other two
+  projects unchanged.
+*/
+:root {
+  /* Brand gradient — the most recognizable brand element */
+  --gradient-start: #f4ad0b;
+  --gradient-mid: #fc7900;
+  --gradient-end: #e3434a;
+  --brand-gradient: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-mid) 55%, var(--gradient-end) 100%);
+  --brand-gradient-tint: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--gradient-start) 10%, transparent) 0%,
+    color-mix(in srgb, var(--gradient-mid) 10%, transparent) 55%,
+    color-mix(in srgb, var(--gradient-end) 10%, transparent) 100%
+  );
+
+  /* Core colors */
+  --color-orange: #fc7900;
+  --color-navy: #182127;
+
+  /* Dark mode is default per brand standard */
+  --bg-canvas: #14191d;
+  --bg-surface: #1b2229;
+  --bg-surface-raised: #212a32;
+  --bg-inset: #10151a;
+  --border-subtle: #2a333c;
+  --border-strong: #3a444f;
+
+  --text-primary: #eef1f3;
+  --text-secondary: #a6b0ba;
+  --text-tertiary: #6b7680;
+  --text-on-gradient: #191008;
+
+  --color-success: #35b06b;
+  --color-danger: #e3434a;
+  --color-warning: #fc7900;
+
+  /* Type */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii */
+  --radius-card: 12px;
+  --radius-button: 6px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.38);
+  --shadow-gradient-glow: 0 0 0 1px color-mix(in srgb, var(--color-orange) 35%, transparent),
+    0 8px 24px color-mix(in srgb, var(--color-orange) 18%, transparent);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    --bg-canvas: #f6f5f3;
+    --bg-surface: #ffffff;
+    --bg-surface-raised: #ffffff;
+    --bg-inset: #f0eeeb;
+    --border-subtle: #e4e1db;
+    --border-strong: #d3cfc6;
+    --text-primary: #182127;
+    --text-secondary: #4b5560;
+    --text-tertiary: #7a8590;
+  }
+}
