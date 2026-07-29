@@ -1,4 +1,4 @@
-# DataFactZ RAG Knowledge Chatbot — Use Case 1 (Week 1)
+#  RAG Knowledge Chatbot — Use Case 1 (Week 1)
 
 **New to Azure/VS Code?** Start with **[docs/SETUP_GUIDE_BEGINNER.md](docs/SETUP_GUIDE_BEGINNER.md)**
 — explains portal.azure.com and ai.azure.com navigation from zero, then
