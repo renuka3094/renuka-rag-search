@@ -1,13 +1,8 @@
 # Solution Design Document — Contoso Knowledge Assistant (RAG Chatbot)
 
 **Program:** DataFactZ AI Engineering Internship — Week 1, Use Case 1
-**Author:** *[your name]*
-**Date:** *[fill in]*
-
-> This is a working first draft generated alongside the codebase. Fill in
-> the bracketed placeholders with your own measurements before submitting —
-> particularly the retrieval-quality table (Section 8) and cost estimate
-> (Section 9), which need numbers from your own test run, not assumed ones.
+**Author:** Renuka Jagadale
+**Date:** July 2026
 
 ---
 
@@ -82,14 +77,41 @@ language questions about company policy.
   Routers only validate input and call services; services hold business
   logic (chunking, retrieval, generation, guardrails); data_access holds
   all SQL.
-- **Relational database:** SQLite locally, swappable to Azure Database
-  for PostgreSQL for a real deployment by changing one `DATABASE_URL`.
+- **Relational database:** SQLite for local development; Azure Database
+  for PostgreSQL in production. The application code needs no changes to
+  move between them (`app/db/session.py` already branches only on the
+  SQLite prefix), but the deployment does need the matching driver —
+  `psycopg[binary]`, not `psycopg2-binary` (see Section 2.1) — and a
+  `postgresql+psycopg://` connection string.
 - **Vector store:** Azure AI Search (hybrid vector + keyword) in
   production; a local numpy cosine-similarity store for zero-cost dev,
   selected by `VECTOR_BACKEND`.
-- **LLM providers:** Azure OpenAI, Azure AI Foundry, DeepSeek, or Claude
-  for generation (all implement the same streaming interface); Azure
-  OpenAI for embeddings (see Section 7 for why DeepSeek isn't used there).
+- **LLM providers:** the codebase implements a common streaming interface
+  across Azure OpenAI, Azure AI Foundry, DeepSeek, and Claude for
+  generation, so switching providers is a configuration change, not a
+  code change. Embeddings run on Azure (`azure_v1` mode) — DeepSeek
+  doesn't currently expose a public embeddings endpoint, so it's only
+  used for generation-side comparison (Section 7.4).
+
+### 2.1 Deployment topology
+
+The diagram above shows the application's internal architecture; this is
+where each piece actually runs in Azure. Full as-built record, including
+every bug hit while deploying and how each was fixed:
+**`docs/DEPLOYMENT.md`**.
+
+| Component | Azure resource | Notes |
+|---|---|---|
+| Frontend | Static Web App (Free tier) | Built via Vite (`npm run build` → `dist/`), deployed via GitHub Actions on every push to `main` |
+| Backend | App Service, Linux, Python 3.11 (Free F1) | `gunicorn` + `uvicorn` workers; deployed via GitHub Actions, server-side Oryx build |
+| Relational DB | Azure Database for PostgreSQL, flexible server (Burstable B1ms) | `psycopg` (v3) driver — `psycopg2-binary` failed to install in Azure's Linux build image |
+| Vector store | Azure AI Search (hybrid vector + keyword) | Index `contoso-kb`, created automatically on first ingestion |
+| LLM + embeddings | Shared Azure AI Foundry project | `azure_v1` provider mode; chat model `gpt-5.5`, embeddings `text-embedding-3-small` |
+| CI/CD | GitHub Actions (2 workflows) | One per hosting resource, both triggered by push to `main` |
+
+Secrets live in exactly two places: local `.env` files (gitignored, never
+committed) and each Azure resource's own server-side configuration —
+never in a repo file or a workflow YAML as literal text.
 
 ## 3. Data Flow
 
@@ -160,10 +182,14 @@ disguised in the body (see `app/core/errors.py`).
   refuses to treat retrieved content or user text as instructions, plus a
   pattern-matching pre-filter that flags common injection phrasing for
   logging/demo purposes.
-- Secrets (`API_KEY`, Azure/DeepSeek/Anthropic keys) live only in `.env`,
-  loaded via `pydantic-settings`; never committed, never logged.
+- Secrets (`API_KEY`, Azure/DeepSeek/Anthropic keys) live only in local
+  `.env` files (loaded via `pydantic-settings`) and, in the deployed
+  environment, in the Azure App Service's own application settings —
+  never committed to git, never logged, never present in a GitHub
+  Actions workflow file as literal text (see `docs/DEPLOYMENT.md` for the
+  full secrets map).
 
-## 7. Design Decisions You Must Defend
+## 7. Design Decisions
 
 ### 7.1 Chunking
 
@@ -199,9 +225,9 @@ numerically wrong chunks.
 paraphrased questions ("time off I've banked" vs. the document's "PTO
 balance") that don't share vocabulary with the source text.
 
-*[Fill in what you actually measured: run your 5–10 test questions
-against pure-vector, pure-keyword, and hybrid, and record which mode got
-the correct top-1 source for each.]*
+*Status: comparative measurement against pure-vector-only and
+pure-keyword-only modes is pending — planned as part of the retrieval
+quality run in Section 8.*
 
 ### 7.3 Top-k and context assembly
 
@@ -212,10 +238,12 @@ return the same chunk via both its vector and keyword match). See
 
 ### 7.4 Model choice
 
-*[Fill in after running the comparison — see Section 9 for a cost
-starting point. Record: which model answered the 5–10 test questions
-correctly, average latency to first token, and cost per 1,000 queries for
-each provider you tested.]*
+Production runs on `gpt-5.5` via the shared Azure AI Foundry project
+(`azure_v1` provider mode). A second-provider comparison against DeepSeek
+(already wired up via `GENERATION_PROVIDER=deepseek`) is planned to
+satisfy the "compare at least two options" requirement — latency,
+quality on the test question set, and cost per 1,000 queries to be
+recorded once that run is complete.
 
 ### 7.5 Conversation history placement
 
@@ -228,7 +256,8 @@ context older than that.
 
 ## 8. Retrieval Quality Note
 
-*[Replace with your actual run output.]*
+*Status: full 5–10 question run against the complete 20-document corpus
+pending — table below to be completed from that run.*
 
 | # | Question | Expected source | Actual top-1 source | Score | Notes |
 |---|---|---|---|---|---|
@@ -238,44 +267,52 @@ context older than that.
 | 4 | What's the meal reimbursement limit for dinner? | Expense Reimbursement Policy | | | |
 | 5 | How many free EAP counseling sessions do I get? | EAP Guide | | | |
 | 6 | What's Contoso's stock ticker? | *(none — should refuse)* | | | |
-| 7 | *[your question]* | | | | |
-| 8 | *[your question]* | | | | |
+| 7 | What are the core hours for remote employees? | Remote Work Policy | Remote Work Policy | ✓ | Correctly cited, verified in production |
+| 8 | What equipment is provided for remote work? | Remote Work Policy | Remote Work Policy | ✓ | Correct follow-up answer, multi-turn context retained |
 
-What you tuned: *[e.g. "raised MIN_RELEVANCE_SCORE from 0.15 to 0.18 after
-question 6 initially retrieved the Employee Handbook Introduction with a
-borderline score instead of refusing"]*
+**What was tuned:** the refusal threshold, `MIN_RELEVANCE_SCORE`, had been
+a single value (0.18) calibrated against the local vector store's
+cosine-similarity scores. Once deployed against Azure AI Search, every
+query was refused regardless of relevance — Azure's hybrid search scores
+results via Reciprocal Rank Fusion, a much smaller scale (typically
+0.01–0.03), so the 0.18 threshold was never met. Split the constant into
+`MIN_RELEVANCE_SCORE_LOCAL` (0.18) and `MIN_RELEVANCE_SCORE_AZURE` (0.01),
+selected by `settings.vector_backend`, in `app/services/retrieval.py`.
 
 ## 9. Cost Estimate
 
-Pricing changes frequently — verify current numbers against your Azure
-OpenAI / DeepSeek pricing page before submitting; the structure below is
-what to fill in, not final numbers.
-
-**Assumptions to state explicitly:** average question ≈ 30 tokens,
+**Assumptions:** average question ≈ 30 tokens,
 average retrieved context ≈ 1,500 tokens (5 chunks × ~300 tokens), average
 answer ≈ 200 tokens → roughly 1,730 input + 200 output tokens per query.
 
 | Scale | Users | Queries/user/day | Queries/month | Est. LLM cost/month | Est. Azure AI Search tier | Est. total/month |
 |---|---|---|---|---|---|---|
-| Pilot | 100 | 3 | ~9,000 | *[queries × (input tokens × input $/token + output tokens × output $/token)]* | Free or Basic | *[sum]* |
-| Production | 5,000 | 3 | ~450,000 | *[same formula × 50]* | Standard S1 (needs the higher query-per-second ceiling) | *[sum]* |
+| Pilot | 100 | 3 | ~9,000 | *pending — current pricing to confirm* | Free or Basic | *pending* |
+| Production | 5,000 | 3 | ~450,000 | *pending (~50× pilot volume)* | Standard S1 (higher query-per-second ceiling) | *pending* |
 
-Show your actual math here, not just the table — e.g.:
 ```
 9,000 queries × 1,730 input tokens = 15,570,000 input tokens
 9,000 queries × 200 output tokens  =  1,800,000 output tokens
-Input cost:  15.57M tokens × $[X]/1M = $[Y]
-Output cost:  1.80M tokens × $[X]/1M = $[Y]
+Input cost:  15.57M tokens × current per-token rate
+Output cost:  1.80M tokens × current per-token rate
 ```
+
+Final figures depend on the shared Foundry project's billing rate for
+`gpt-5.5`, which is being confirmed before this section is finalized —
+placeholder math above uses the token-volume assumptions already stated.
 
 ## 10. Scalability — What Changes at 100x Load
 
 At 100x the pilot's traffic (100 → 10,000 concurrent-ish users):
 
-- **What breaks first:** SQLite. It's fine for a single-process pilot but
-  has no real concurrent-write story. Move `DATABASE_URL` to Azure
-  Database for PostgreSQL — no application code changes required, only
-  the connection string and running `alembic upgrade head` against it.
+- **What breaks first:** the database's compute tier. Production already
+  runs on Azure Database for PostgreSQL rather than SQLite (SQLite is
+  local-dev-only, given App Service's local disk doesn't reliably persist
+  across restarts). At 100x load, the current Burstable B1ms tier — sized
+  for a pilot — would need to move to a higher, non-burstable compute
+  tier with connection pooling (e.g. PgBouncer) in front of it, since a
+  single small instance has a hard ceiling on concurrent connections
+  regardless of query complexity.
 - **Vector store:** the local numpy store (fine for dev) would be far too
   slow and memory-bound at this scale; Azure AI Search's Standard tier
   scales replicas/partitions independently of the app tier and is the
@@ -305,6 +342,13 @@ At 100x the pilot's traffic (100 → 10,000 concurrent-ish users):
 
 ## 11. Pattern Justification Summary
 
-See Section 7 above for chunking and retrieval; the same "state the
-choice, name 2 rejected alternatives, give the specific reason" structure
-applies to every major decision in this document.
+Five decisions carry the most architectural weight in this system, all
+detailed with rejected alternatives in Section 7: structure-aware
+chunking over whole-document or naive fixed-size splitting; hybrid
+vector+keyword retrieval over pure-vector or pure-keyword search; a
+five-chunk, score-ordered, deduplicated context window; a
+multi-provider LLM abstraction that keeps model choice a configuration
+decision rather than a code dependency; and database-backed (not
+in-memory) conversation history, bounded to the last four turns per
+prompt. Each reflects the same underlying constraint — this system has to
+be defensible in front of a client, not just functional in a demo.
