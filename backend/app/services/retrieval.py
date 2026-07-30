@@ -24,8 +24,11 @@ Top-k and context assembly, as implemented here:
 from dataclasses import dataclass
 
 from app.core.config import get_settings
+from app.core.logging import get_logger
 from app.services.embeddings import embed_texts
 from app.services.vector_store import get_vector_store
+
+log = get_logger(__name__)
 
 MIN_RELEVANCE_SCORE_LOCAL = 0.18  # tuned against the local cosine-similarity store (0-1 range)
 MIN_RELEVANCE_SCORE_AZURE = 0.01  # Azure AI Search hybrid search returns RRF scores (~0.01-0.03), a different scale
@@ -49,6 +52,13 @@ async def retrieve(query: str, top_k: int | None = None) -> list[RetrievedChunk]
     [query_embedding] = await embed_texts([query])
     store = get_vector_store()
     hits = store.search(query_embedding, query, top_k=k)
+
+    log.info(
+        "retrieval_debug",
+        query_embedding_len=len(query_embedding),
+        hit_count=len(hits),
+        top_score=hits[0].get("score") if hits else None,
+    )
 
     seen_chunk_ids: set[str] = set()
     deduped: list[RetrievedChunk] = []
