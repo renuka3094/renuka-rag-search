@@ -27,7 +27,8 @@ from app.core.config import get_settings
 from app.services.embeddings import embed_texts
 from app.services.vector_store import get_vector_store
 
-MIN_RELEVANCE_SCORE = 0.18  # tuned against the retrieval-quality test set in the design doc
+MIN_RELEVANCE_SCORE_LOCAL = 0.18  # tuned against the local cosine-similarity store (0-1 range)
+MIN_RELEVANCE_SCORE_AZURE = 0.01  # Azure AI Search hybrid search returns RRF scores (~0.01-0.03), a different scale
 REFUSAL_TEXT = "I don't have that in the knowledge base."
 
 
@@ -71,4 +72,6 @@ async def retrieve(query: str, top_k: int | None = None) -> list[RetrievedChunk]
 def should_refuse(chunks: list[RetrievedChunk]) -> bool:
     if not chunks:
         return True
-    return chunks[0].score < MIN_RELEVANCE_SCORE
+    settings = get_settings()
+    threshold = MIN_RELEVANCE_SCORE_AZURE if settings.vector_backend == "azure" else MIN_RELEVANCE_SCORE_LOCAL
+    return chunks[0].score < threshold
