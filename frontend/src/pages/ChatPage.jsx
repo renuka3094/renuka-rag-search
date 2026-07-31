@@ -2,6 +2,7 @@ import { Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import ChatInput from "../components/ChatInput";
+import CitationModal from "../components/CitationModal";
 import MessageBubble from "../components/MessageBubble";
 import { streamChat } from "../lib/api";
 
@@ -9,6 +10,7 @@ export default function ChatPage() {
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [streaming, setStreaming] = useState(false);
+  const [activeCitation, setActiveCitation] = useState(null);
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -78,11 +80,13 @@ export default function ChatPage() {
           </div>
         )}
         {messages.map((m, i) => (
-          <MessageBubble key={m.id ?? i} message={m} />
+          <MessageBubble key={m.id ?? i} message={m} onCitationClick={setActiveCitation} />
         ))}
       </div>
 
       <ChatInput onSend={handleSend} disabled={streaming} />
+
+      <CitationModal citation={activeCitation} onClose={() => setActiveCitation(null)} />
     </div>
   );
 }

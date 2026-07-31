@@ -1,7 +1,7 @@
 import { AlertTriangle, FileText, ShieldAlert } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
-export default function MessageBubble({ message }) {
+export default function MessageBubble({ message, onCitationClick }) {
   const isUser = message.role === "user";
 
   return (
@@ -40,7 +40,7 @@ export default function MessageBubble({ message }) {
                 key={c.chunk_id}
                 className="pill pill-neutral"
                 title={c.snippet}
-                onClick={() => alert(`${c.document_title}\n\n${c.snippet}`)}
+                onClick={() => onCitationClick?.(c)}
                 style={{ cursor: "pointer", border: "1px solid var(--border-subtle)" }}
               >
                 <FileText size={12} strokeWidth={1.75} />
