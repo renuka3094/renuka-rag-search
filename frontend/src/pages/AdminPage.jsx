@@ -2,7 +2,7 @@ import { RefreshCw, Trash2, Upload } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import UsageAnalytics from "../components/UsageAnalytics";
-import { deleteDocument, listDocuments, reindexAll, reindexDocument, uploadDocument } from "../lib/api";
+import { deleteDocument, listDocuments, reindexAll, uploadDocument } from "../lib/api";
 
 const STATUS_PILL = {
   indexed: "pill-success",
@@ -45,18 +45,6 @@ export default function AdminPage() {
     } finally {
       setBusyId(null);
       e.target.value = "";
-    }
-  }
-
-  async function handleReindex(id) {
-    setBusyId(id);
-    try {
-      await reindexDocument(id);
-      await refresh();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setBusyId(null);
     }
   }
 
@@ -148,14 +136,6 @@ export default function AdminPage() {
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span className={`pill ${STATUS_PILL[doc.status] ?? "pill-neutral"}`}>{doc.status}</span>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => handleReindex(doc.id)}
-                    disabled={busyId === doc.id}
-                    title="Re-index this document"
-                  >
-                    <RefreshCw size={14} strokeWidth={2} />
-                  </button>
                   <button
                     className="btn btn-secondary"
                     onClick={() => handleDelete(doc.id)}

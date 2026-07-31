@@ -37,7 +37,15 @@ export default function MessageBubble({ message, onSourcesClick }) {
             </div>
           )}
           <div style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--text-primary)" }}>
-            <ReactMarkdown>{message.content}</ReactMarkdown>
+            {!isUser && message.content === "" ? (
+              <div className="typing-dots">
+                <span />
+                <span />
+                <span />
+              </div>
+            ) : (
+              <ReactMarkdown>{message.content}</ReactMarkdown>
+            )}
           </div>
         </div>
 
