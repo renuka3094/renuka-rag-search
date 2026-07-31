@@ -256,19 +256,42 @@ context older than that.
 
 ## 8. Retrieval Quality Note
 
-*Status: full 5–10 question run against the complete 20-document corpus
-pending — table below to be completed from that run.*
+Run against the full 20-document, 139-chunk corpus, in production, via
+`azure_v1` (`gpt-5.5`):
 
-| # | Question | Expected source | Actual top-1 source | Score | Notes |
+| # | Question | Expected source | Actual top-1 source | Correct? | Notes |
 |---|---|---|---|---|---|
-| 1 | How many PTO days do employees accrue per month? | Paid Time Off Policy | | | |
-| 2 | How long is paid parental leave for a birthing parent? | Parental Leave Policy | | | |
-| 3 | What's the company match on the 401(k)? | 401(k) Retirement Plan Summary | | | |
-| 4 | What's the meal reimbursement limit for dinner? | Expense Reimbursement Policy | | | |
-| 5 | How many free EAP counseling sessions do I get? | EAP Guide | | | |
-| 6 | What's Contoso's stock ticker? | *(none — should refuse)* | | | |
-| 7 | What are the core hours for remote employees? | Remote Work Policy | Remote Work Policy | ✓ | Correctly cited, verified in production |
-| 8 | What equipment is provided for remote work? | Remote Work Policy | Remote Work Policy | ✓ | Correct follow-up answer, multi-turn context retained |
+| 1 | How many PTO days do employees accrue per month? | Paid Time Off Policy | Paid Time Off Policy | ✓ | Exact figure (1.5/month, 18/year), correctly cited |
+| 2 | What percentage of my health insurance premium does the company cover? | Health Insurance Benefits Guide | Health Insurance Benefits Guide | ✓ | Correct 80%/60% split, correctly cited |
+| 3 | How much is the referral bonus for a hard-to-fill engineering role? | Employee Referral Program | Employee Referral Program | ✓ | Correct $3,000 figure, correctly cited |
+| 4 | What happens if my laptop hasn't arrived by my start date? | Onboarding Checklist for New Hires | Onboarding Checklist for New Hires | ✓ | Correctly surfaced FAQ-section content specifically, not just the parent document |
+| 5 | How many vacation days do I earn each month? *(paraphrase of Q1 — "vacation" vs. "PTO", "earn" vs. "accrue")* | Paid Time Off Policy | Paid Time Off Policy | ✓ | Confirms hybrid search handles vocabulary mismatch, not just exact keyword overlap |
+| 6 | Can I carry over unused time off into next year? | Paid Time Off Policy (Rollover) | Paid Time Off Policy | ✓ | Correct 5-day rollover cap and Dec 31 forfeiture date |
+| 7 | What counts as a full-time employee at Contoso Corp? | Employee Handbook Introduction (Key Definitions) | Employee Handbook Introduction | ✗ | **Retrieval miss** — see note below |
+| 8 | What's Contoso Corp's stock ticker symbol? | *(none — should refuse)* | *(refused)* | ✓ | Correctly refused, but see note below on *how* |
+
+**6 of 8 fully correct.** Two results are genuinely informative rather
+than simple failures:
+
+- **Q7** correctly identified the right *document* (Employee Handbook
+  Introduction) but the wrong *chunk* within it — it retrieved the "Who
+  This Applies To" section (which also mentions "full-time" prominently)
+  instead of the "Key Definitions" section that actually contains the
+  precise definition. This is a real, useful finding: document-level
+  retrieval can succeed while chunk-level retrieval still misses the
+  specific passage that answers the question, especially once a document
+  has many sections competing for the same keywords.
+- **Q8** refused correctly, but not for the reason the design assumes.
+  Checking the raw citations showed retrieval still returned 5 chunks
+  (irrelevant ones — a 401(k) FAQ, Code of Conduct sections) with scores
+  above the 0.01 Azure threshold, so `should_refuse()`'s score gate did
+  *not* trigger. The refusal instead came from the LLM itself, following
+  the system prompt's rule to refuse when the retrieved context doesn't
+  answer the question. In practice, this means the score-based gate
+  rarely fires at all against Azure AI Search — Reciprocal Rank Fusion
+  scores for *any* returned hit are almost always above 0.01, so the
+  system prompt's own honesty rule is doing the real refusal work, not
+  the code-level threshold.
 
 **What was tuned:** the refusal threshold, `MIN_RELEVANCE_SCORE`, had been
 a single value (0.18) calibrated against the local vector store's
@@ -278,6 +301,8 @@ results via Reciprocal Rank Fusion, a much smaller scale (typically
 0.01–0.03), so the 0.18 threshold was never met. Split the constant into
 `MIN_RELEVANCE_SCORE_LOCAL` (0.18) and `MIN_RELEVANCE_SCORE_AZURE` (0.01),
 selected by `settings.vector_backend`, in `app/services/retrieval.py`.
+Q8 above suggests this threshold could be raised further for the Azure
+path — a natural next tuning step, not yet done.
 
 ## 9. Cost Estimate
 
