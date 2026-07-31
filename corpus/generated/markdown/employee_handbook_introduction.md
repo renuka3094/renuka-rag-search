@@ -41,3 +41,15 @@ This handbook is published in English as the authoritative version. A Spanish-la
 For a question about pay or benefits enrollment, contact HR directly rather than your manager, since managers do not have access to payroll or benefits systems. For a question about a specific policy's intent or history, People Operations can provide context the written policy text alone may not capture.
 
 The Knowledge Assistant referenced throughout this handbook is intended for quick lookups and is grounded strictly in this document set; for anything involving a personal or sensitive situation (a leave request tied to a health condition, a harassment concern), employees should go directly to HR or the Ethics Hotline rather than relying on the assistant.
+
+## Frequently Asked Questions
+
+Does this handbook apply to me if I was hired through a staffing agency? No — agency-placed workers are covered by their agency's own policies, not this handbook, even while working on-site at a Contoso Corp office; if a Contoso Corp manager directs an agency worker's day-to-day work, that manager should still confirm expectations with the agency directly rather than applying this handbook informally.
+
+What happens if a policy in this handbook conflicts with something my manager told me verbally? The written handbook, as published on the internal HR portal, always controls over any verbal statement from a manager, regardless of the manager's seniority; a verbal exception a manager grants is only valid if it is also confirmed in writing by HR.
+
+Who decides if a new situation isn't clearly covered by any policy here? People Operations makes the initial call, in consultation with Legal for anything with potential legal exposure; a genuinely novel situation not covered by any existing policy typically results in a documented one-off decision that later informs whether the handbook itself should be updated.
+
+## Related Policies and Scope
+
+This handbook does not cover compensation structure, equity grants, or sales commission plans, which are governed by separate, role-specific compensation documents distributed at hire and updated as needed; employees with compensation questions should contact their HR Business Partner rather than searching this handbook for an answer it does not contain.

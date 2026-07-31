@@ -33,3 +33,11 @@ Employees representing Contoso Corp on official company social media accounts mu
 ## Political and Outside Activity
 
 Employees may engage in political activity and personal outside employment on their own time, as long as it does not create a conflict of interest (see the Conflicts of Interest section) and does not use Contoso Corp resources, branding, or work time. Contoso Corp does not endorse any candidate or party as a company, and employees should not imply company endorsement when engaging in personal political activity.
+
+## Frequently Asked Questions
+
+Can I be disciplined for something I post on my personal social media outside of work hours? Only if the post violates this Code of Conduct directly — for example, harassing a coworker, disclosing confidential information, or making a discriminatory statement identifiable as coming from a Contoso Corp employee. Purely personal opinions unrelated to work or colleagues are not subject to this policy.
+
+What if I'm unsure whether a gift crosses the $75 threshold? When in doubt, disclose it to your manager and Compliance; disclosing a gift that turns out to be under the threshold carries no consequence, while failing to disclose one that turns out to be over the threshold is treated as a more serious violation than the gift itself.
+
+Is a report to the Ethics Hotline really anonymous if I want it to be? Yes — the hotline is operated by an independent third party specifically so that fully anonymous reports are possible; Contoso Corp only receives the substance of the report, not identifying information, unless the reporter chooses to provide it.

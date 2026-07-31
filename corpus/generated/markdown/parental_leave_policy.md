@@ -29,3 +29,11 @@ Contoso Corp provides a private lactation room in every office location, availab
 ## Leave for Pregnancy Loss or Complications
 
 Employees experiencing a pregnancy loss, stillbirth, or a serious pregnancy-related medical complication are eligible for up to 2 weeks of paid leave in addition to any leave otherwise available under this policy or short-term disability coverage, without needing to have reached the standard 90-day eligibility threshold described above.
+
+## Frequently Asked Questions
+
+Can I use accrued PTO to extend my parental leave beyond the paid weeks this policy provides? Yes, PTO can be used consecutively after the paid parental leave period ends, subject to normal PTO request and approval rules; many employees use this to extend an effective leave by an additional 1-3 weeks depending on their PTO balance.
+
+Do both parents get leave if we both work at Contoso Corp and are having a child together? Yes — each employee's eligibility and leave duration is determined individually based on their own role (birthing or non-birthing parent), not reduced or shared because both parents work at the same company.
+
+What if my adoption falls through after I've already started my leave? Leave taken in good-faith anticipation of a placement that does not finalize is not clawed back; HR will work with the employee individually on returning to work, since this is treated as a sensitive personal situation rather than a policy violation.

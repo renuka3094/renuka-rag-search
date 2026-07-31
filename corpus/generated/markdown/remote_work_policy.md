@@ -41,3 +41,11 @@ Confidential data accessed while remote must follow the same rules as the Data S
 ## Coworking Spaces and Alternate Locations
 
 Employees may work from a coworking space or coffee shop occasionally, but should avoid discussing confidential business matters audibly in a public space, and should never leave a company laptop unattended and unlocked. Coworking space membership fees are not reimbursed under this policy; employees who want a dedicated coworking membership should discuss it with their manager as a separate budget request.
+
+## Frequently Asked Questions
+
+Can I permanently relocate to a different state while remaining remote-eligible? Yes, but you must notify HR and Payroll at least 30 days before the move, since a state change can affect tax withholding, benefits eligibility, and in some cases whether your role remains remote-eligible if the new state has licensing or regulatory implications for your specific role.
+
+Is remote eligibility the same as a formal flexible-work accommodation for a medical condition? No — a medical accommodation goes through the separate Accommodation Requests process described in the Anti-Harassment and Non-Discrimination Policy and can grant remote work even for a role not otherwise designated remote-eligible, since it is evaluated under different legal standards.
+
+What happens to my equipment stipend if I switch from remote-eligible to hybrid partway through the year? The one-time $300 equipment stipend is not repeated or clawed back; the $50 monthly internet stipend stops as of the pay period following the schedule change, prorated for the transition month.

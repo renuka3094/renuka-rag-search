@@ -45,3 +45,15 @@ Extended illness beyond what standard PTO can reasonably cover should be discuss
 Employees receive up to 5 paid bereavement days for the death of an immediate family member (spouse, child, parent, sibling) and up to 2 paid days for an extended family member, in addition to standard PTO; bereavement days do not draw down the employee's PTO balance.
 
 Employees summoned for jury duty receive paid leave for the full duration of their service, with no cap on the number of days, upon providing the court summons to HR; employees called as a witness in a legal proceeding unrelated to Contoso Corp business should discuss the specific situation with HR, since coverage depends on the nature of the proceeding.
+
+## Frequently Asked Questions
+
+Can I take PTO during my introductory 30-day period? You accrue PTO from day one, but cannot use it until 30 days have passed, except for a documented medical emergency approved by HR; plan any vacation requests for after your 30-day mark.
+
+What if I need more time off than I have accrued? Unpaid leave beyond your accrued PTO balance requires manager approval and, depending on the reason and duration, may need to be processed as a formal leave of absence rather than extended PTO; talk to your manager and HR before assuming unpaid time off will be approved informally.
+
+Does a company holiday that falls during my PTO count against my PTO balance? No — if a recognized Contoso Corp holiday falls within a scheduled PTO block, that day is paid as a holiday and is not deducted from the employee's PTO balance.
+
+## Related Policies
+
+This policy should be read alongside the Parental Leave Policy for any leave related to birth, adoption, or foster placement, and alongside the Remote Work Policy's core-hours section for how PTO interacts with a remote work schedule spanning multiple time zones.

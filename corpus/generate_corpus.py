@@ -49,6 +49,14 @@ DOCS_MARKDOWN = [
             "For a question about pay or benefits enrollment, contact HR directly rather than your manager, since managers do not have access to payroll or benefits systems. For a question about a specific policy's intent or history, People Operations can provide context the written policy text alone may not capture.",
             "The Knowledge Assistant referenced throughout this handbook is intended for quick lookups and is grounded strictly in this document set; for anything involving a personal or sensitive situation (a leave request tied to a health condition, a harassment concern), employees should go directly to HR or the Ethics Hotline rather than relying on the assistant.",
         ]),
+        ("Frequently Asked Questions", [
+            "Does this handbook apply to me if I was hired through a staffing agency? No — agency-placed workers are covered by their agency's own policies, not this handbook, even while working on-site at a Contoso Corp office; if a Contoso Corp manager directs an agency worker's day-to-day work, that manager should still confirm expectations with the agency directly rather than applying this handbook informally.",
+            "What happens if a policy in this handbook conflicts with something my manager told me verbally? The written handbook, as published on the internal HR portal, always controls over any verbal statement from a manager, regardless of the manager's seniority; a verbal exception a manager grants is only valid if it is also confirmed in writing by HR.",
+            "Who decides if a new situation isn't clearly covered by any policy here? People Operations makes the initial call, in consultation with Legal for anything with potential legal exposure; a genuinely novel situation not covered by any existing policy typically results in a documented one-off decision that later informs whether the handbook itself should be updated.",
+        ]),
+        ("Related Policies and Scope", [
+            "This handbook does not cover compensation structure, equity grants, or sales commission plans, which are governed by separate, role-specific compensation documents distributed at hire and updated as needed; employees with compensation questions should contact their HR Business Partner rather than searching this handbook for an answer it does not contain.",
+        ]),
     ]),
     ("Paid Time Off Policy", [
         ("Accrual", [
@@ -80,6 +88,14 @@ DOCS_MARKDOWN = [
             "Employees receive up to 5 paid bereavement days for the death of an immediate family member (spouse, child, parent, sibling) and up to 2 paid days for an extended family member, in addition to standard PTO; bereavement days do not draw down the employee's PTO balance.",
             "Employees summoned for jury duty receive paid leave for the full duration of their service, with no cap on the number of days, upon providing the court summons to HR; employees called as a witness in a legal proceeding unrelated to Contoso Corp business should discuss the specific situation with HR, since coverage depends on the nature of the proceeding.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I take PTO during my introductory 30-day period? You accrue PTO from day one, but cannot use it until 30 days have passed, except for a documented medical emergency approved by HR; plan any vacation requests for after your 30-day mark.",
+            "What if I need more time off than I have accrued? Unpaid leave beyond your accrued PTO balance requires manager approval and, depending on the reason and duration, may need to be processed as a formal leave of absence rather than extended PTO; talk to your manager and HR before assuming unpaid time off will be approved informally.",
+            "Does a company holiday that falls during my PTO count against my PTO balance? No — if a recognized Contoso Corp holiday falls within a scheduled PTO block, that day is paid as a holiday and is not deducted from the employee's PTO balance.",
+        ]),
+        ("Related Policies", [
+            "This policy should be read alongside the Parental Leave Policy for any leave related to birth, adoption, or foster placement, and alongside the Remote Work Policy's core-hours section for how PTO interacts with a remote work schedule spanning multiple time zones.",
+        ]),
     ]),
     ("Remote Work Policy", [
         ("Eligibility", [
@@ -109,6 +125,11 @@ DOCS_MARKDOWN = [
         ("Coworking Spaces and Alternate Locations", [
             "Employees may work from a coworking space or coffee shop occasionally, but should avoid discussing confidential business matters audibly in a public space, and should never leave a company laptop unattended and unlocked. Coworking space membership fees are not reimbursed under this policy; employees who want a dedicated coworking membership should discuss it with their manager as a separate budget request.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I permanently relocate to a different state while remaining remote-eligible? Yes, but you must notify HR and Payroll at least 30 days before the move, since a state change can affect tax withholding, benefits eligibility, and in some cases whether your role remains remote-eligible if the new state has licensing or regulatory implications for your specific role.",
+            "Is remote eligibility the same as a formal flexible-work accommodation for a medical condition? No — a medical accommodation goes through the separate Accommodation Requests process described in the Anti-Harassment and Non-Discrimination Policy and can grant remote work even for a role not otherwise designated remote-eligible, since it is evaluated under different legal standards.",
+            "What happens to my equipment stipend if I switch from remote-eligible to hybrid partway through the year? The one-time $300 equipment stipend is not repeated or clawed back; the $50 monthly internet stipend stops as of the pay period following the schedule change, prorated for the transition month.",
+        ]),
     ]),
     ("Code of Conduct", [
         ("Professional Behavior", [
@@ -134,6 +155,11 @@ DOCS_MARKDOWN = [
         ("Political and Outside Activity", [
             "Employees may engage in political activity and personal outside employment on their own time, as long as it does not create a conflict of interest (see the Conflicts of Interest section) and does not use Contoso Corp resources, branding, or work time. Contoso Corp does not endorse any candidate or party as a company, and employees should not imply company endorsement when engaging in personal political activity.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I be disciplined for something I post on my personal social media outside of work hours? Only if the post violates this Code of Conduct directly — for example, harassing a coworker, disclosing confidential information, or making a discriminatory statement identifiable as coming from a Contoso Corp employee. Purely personal opinions unrelated to work or colleagues are not subject to this policy.",
+            "What if I'm unsure whether a gift crosses the $75 threshold? When in doubt, disclose it to your manager and Compliance; disclosing a gift that turns out to be under the threshold carries no consequence, while failing to disclose one that turns out to be over the threshold is treated as a more serious violation than the gift itself.",
+            "Is a report to the Ethics Hotline really anonymous if I want it to be? Yes — the hotline is operated by an independent third party specifically so that fully anonymous reports are possible; Contoso Corp only receives the substance of the report, not identifying information, unless the reporter chooses to provide it.",
+        ]),
     ]),
     ("Parental Leave Policy", [
         ("Eligibility", [
@@ -155,6 +181,11 @@ DOCS_MARKDOWN = [
         ]),
         ("Leave for Pregnancy Loss or Complications", [
             "Employees experiencing a pregnancy loss, stillbirth, or a serious pregnancy-related medical complication are eligible for up to 2 weeks of paid leave in addition to any leave otherwise available under this policy or short-term disability coverage, without needing to have reached the standard 90-day eligibility threshold described above.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Can I use accrued PTO to extend my parental leave beyond the paid weeks this policy provides? Yes, PTO can be used consecutively after the paid parental leave period ends, subject to normal PTO request and approval rules; many employees use this to extend an effective leave by an additional 1-3 weeks depending on their PTO balance.",
+            "Do both parents get leave if we both work at Contoso Corp and are having a child together? Yes — each employee's eligibility and leave duration is determined individually based on their own role (birthing or non-birthing parent), not reduced or shared because both parents work at the same company.",
+            "What if my adoption falls through after I've already started my leave? Leave taken in good-faith anticipation of a placement that does not finalize is not clawed back; HR will work with the employee individually on returning to work, since this is treated as a sensitive personal situation rather than a policy violation.",
         ]),
     ]),
 ]
@@ -184,6 +215,11 @@ DOCS_HTML = [
         ("International Expense Handling", [
             "Expenses incurred in a foreign currency are converted to U.S. dollars using the Concur portal's daily exchange rate as of the transaction date, not the date the expense report is submitted; employees should keep the original foreign-currency receipt even though the report displays the converted amount.",
         ]),
+        ("Frequently Asked Questions", [
+            "What if I lose a receipt for an expense over $25? Submit a Missing Receipt Affidavit through the Expense portal explaining the amount, vendor, and business purpose; this is accepted occasionally, but a pattern of repeated missing receipts from the same employee triggers a review by Finance.",
+            "Can I expense a gift for a colleague's birthday or a team celebration? Small team morale expenses (a birthday cake, a team lunch) up to $15 per person are reimbursable under the Team Building sub-category; this is separate from the Business Entertainment category used for client meals.",
+            "How long does reimbursement actually take once a report is approved? Approved reports are paid out on the next scheduled reimbursement cycle, which runs weekly; most employees see reimbursement within 5-7 business days of manager approval.",
+        ]),
     ]),
     ("Travel Policy", [
         ("Booking Travel", [
@@ -208,6 +244,11 @@ DOCS_HTML = [
         ("Travel Insurance and Emergency Assistance", [
             "All business travel booked through the Contoso Travel Portal automatically includes emergency medical and evacuation insurance at no cost to the employee; the insurance provider's 24/7 emergency line is printed on the travel itinerary confirmation and should be contacted first in a medical emergency abroad, before local emergency services if reasonably possible, since the insurer can coordinate care and cost directly.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I extend a business trip for personal time (a 'bleisure' trip)? Yes, as long as the additional personal days do not increase the cost of the airfare compared to a direct round trip on the business dates alone; any cost difference caused by the extended dates is the employee's responsibility, and this should be flagged to the Travel Desk when booking.",
+            "What if my flight is delayed or cancelled and I need to book a new one on the spot? Contact the Travel Desk's after-hours emergency line first if reasonably possible, since they can often rebook within policy faster than a traveler booking independently; if an independent booking is unavoidable, keep all documentation and it will be reviewed for reimbursement under the same policy limits.",
+            "Are conference registration fees covered under this Travel Policy? No — conference and training registration fees are reimbursed under the separate Learning and Development budget, not the Travel Policy, though travel and lodging to attend that conference does fall under this policy.",
+        ]),
     ]),
     ("Health Insurance Benefits Guide", [
         ("Plan Options", [
@@ -231,6 +272,11 @@ DOCS_HTML = [
         ("Telehealth Services", [
             "All three medical plans include unlimited telehealth visits for general medical concerns at a lower copay than an in-person visit, available 24/7 through the plan's telehealth app. Telehealth is not a substitute for emergency care, and the plan's telehealth provider will direct a caller to emergency services if the described symptoms warrant it.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I add my domestic partner to my medical plan even though we're not legally married? Yes — Contoso Corp recognizes domestic partnerships for benefits purposes upon completion of a Domestic Partner Affidavit, and the enrollment window and documentation requirements are the same as for a spouse.",
+            "What happens to my HSA balance in the HDHP if I switch to a different plan tier next year? The HSA balance is the employee's own money and is never forfeited or clawed back regardless of plan changes; however, Contoso Corp's annual HSA contribution is only made while the employee is actively enrolled in the HDHP specifically.",
+            "Is out-of-network care ever covered under the PPO plans? Yes, at a reduced reimbursement rate compared to in-network care, and subject to a separate, higher out-of-network deductible; the HDHP has more limited out-of-network coverage than the two PPO tiers.",
+        ]),
     ]),
     ("Dental and Vision Benefits", [
         ("Dental Coverage", [
@@ -248,6 +294,10 @@ DOCS_HTML = [
         ]),
         ("Out-of-Network Care", [
             "Both the dental and vision plans allow out-of-network care, but reimbursement is based on a set 'usual and customary' fee schedule rather than the provider's actual billed amount, meaning an employee choosing an out-of-network provider may owe a larger out-of-pocket balance than the same procedure would cost in-network.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Are teeth whitening or other cosmetic dental procedures covered? No, cosmetic-only procedures with no functional or health necessity are excluded from the dental plan entirely; a procedure with both a cosmetic and functional component (for example, a crown that is both structurally necessary and improves appearance) is covered based on the functional necessity, not the cosmetic benefit.",
+            "Can I use my vision allowance on both glasses and contacts in the same 12-month period? No, the $150 allowance applies once per 12-month period toward either frames/lenses or contacts, not both; employees who want both should plan which to prioritize within a given benefit year.",
         ]),
     ]),
     ("401(k) Retirement Plan Summary", [
@@ -267,6 +317,11 @@ DOCS_HTML = [
         ("Loans and Hardship Withdrawals", [
             "Active employees may borrow up to 50% of their vested balance (maximum $50,000) as a 401(k) loan, repaid through payroll deduction over up to 5 years at a fixed interest rate set at loan origination; an unpaid loan balance becomes a taxable distribution if the employee separates from Contoso Corp before it is repaid.",
             "Hardship withdrawals are permitted for a narrow set of IRS-defined reasons (preventing eviction, certain medical expenses, funeral expenses) and require documentation; unlike a loan, a hardship withdrawal is not repaid and is subject to income tax and, in most cases, an early-withdrawal penalty if the employee is under 59 and a half.",
+        ]),
+        ("Frequently Asked Questions", [
+            "If I leave Contoso Corp, what happens to my 401(k) balance? Your own contributions and any vested match remain yours; you can leave the balance in the plan (if above a minimum threshold), roll it into an IRA or a new employer's plan, or take a cash distribution subject to taxes and an early-withdrawal penalty if you are under 59 and a half.",
+            "Can I contribute more than the standard IRS annual limit if I'm over 50? Yes, employees aged 50 and over may make additional catch-up contributions above the standard IRS limit, and the plan automatically permits this once the system detects an employee's date of birth qualifies.",
+            "Does Contoso Corp's match apply to catch-up contributions? No, the company match formula applies only up to the percentages described above on eligible pay; catch-up contributions do not receive an additional match beyond that.",
         ]),
     ]),
 ]
@@ -289,6 +344,10 @@ DOCS_DOCX = [
         ("Program Review and Fraud Prevention", [
             "Talent Acquisition audits referral bonus payouts quarterly to confirm the referring employee had a genuine prior relationship with the candidate; a referral submitted with no evidence of a real connection (for example, submitted the same day a resume was already in the applicant tracking system from a job board) may be denied pending review.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I refer more than one candidate for the same role? Yes, there is no limit on the number of referrals a single employee can submit, and each successful referral that results in a hire earns its own separate bonus, subject to the same eligibility and payout rules.",
+            "What counts as a 'successful' referral for bonus purposes? A referral is successful once the referred candidate is hired and completes their first day; the bonus payout schedule (50% at 90 days, 50% at 6 months) then begins from that first day, regardless of how long the hiring process itself took.",
+        ]),
     ]),
     ("Performance Review Process", [
         ("Review Cadence", [
@@ -308,6 +367,10 @@ DOCS_DOCX = [
         ("Promotion Nominations", [
             "Promotions are nominated by a manager during the annual review cycle and go through the same cross-team calibration process as ratings, to ensure consistent promotion standards across departments; an employee may also self-nominate for promotion consideration, which their manager is required to bring to calibration even if the manager does not personally support it.",
         ]),
+        ("Frequently Asked Questions", [
+            "If I'm rated Meets Expectations every cycle, can I still be promoted? Yes — a consistent Meets Expectations rating combined with demonstrated readiness for the next level's scope of work is a legitimate basis for promotion; a higher rating is not a strict prerequisite, though it does strengthen a promotion case during calibration.",
+            "Can my rating be changed after calibration if I disagree with it? The calibration outcome is final for that review cycle, but a documented, substantive disagreement can be raised through the rating explanation meeting and, if unresolved, escalated to the HR Business Partner; this can inform how the *next* cycle's calibration is run, even though it does not retroactively change a already-finalized rating.",
+        ]),
     ]),
     ("Anti-Harassment and Non-Discrimination Policy", [
         ("Policy Statement", [
@@ -324,6 +387,10 @@ DOCS_DOCX = [
         ]),
         ("Accommodation Requests", [
             "Employees may request a reasonable accommodation for a disability, a sincerely held religious belief, or a pregnancy-related condition through HR's Accommodations Request Form; requests are evaluated on a case-by-case, interactive basis with the employee, and a request is denied only if it would impose an undue hardship on Contoso Corp's operations.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Can I report a concern about my own manager's behavior? Yes — the Ethics Hotline exists specifically so that concerns involving a direct manager, or anyone else in an employee's normal reporting chain, can be raised to someone outside that chain; reporting through the hotline does not require going through the manager in question first.",
+            "What happens to the accused employee during a harassment investigation? Depending on the severity of the allegation, the accused employee may be placed on administrative leave (paid, not disciplinary) pending the outcome of the investigation, to prevent any possibility of continued harm or retaliation while the facts are being established.",
         ]),
     ]),
     ("IT Acceptable Use Policy", [
@@ -343,6 +410,10 @@ DOCS_DOCX = [
         ("Generative AI Tool Usage", [
             "Employees may use approved generative AI tools for drafting and research, but must not paste Confidential or Internal data (customer information, unreleased financials, source code) into any AI tool that is not on the IT-approved list, since many public AI tools retain submitted input for model training by default.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I use my personal password manager for company account passwords? Yes, as long as the password manager itself supports multi-factor authentication; storing company passwords in an unsecured note, spreadsheet, or a password manager without MFA is a policy violation regardless of how strong the individual passwords themselves are.",
+            "What should I do if I accidentally click a phishing link? Report it to security@contoso-corp.example immediately, even if you're not sure anything happened — do not wait to see if there are consequences first. Immediate reporting lets Security check for and contain any compromise quickly, and no employee is disciplined for reporting a mistake in good faith.",
+        ]),
     ]),
     ("Data Security and Confidentiality Policy", [
         ("Data Classification", [
@@ -359,6 +430,10 @@ DOCS_DOCX = [
         ]),
         ("Post-Employment Confidentiality", [
             "The confidentiality obligations in this policy continue after an employee leaves Contoso Corp, indefinitely for trade secrets and for a minimum of 3 years for other Confidential data, as outlined in the confidentiality agreement every employee signs at hire. Former employees remain bound by this even if their specific employment agreement is silent on the point, since this policy applies independently of the individual agreement.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Can I keep a copy of a presentation I made for a client after I leave Contoso Corp? Only the parts that do not contain Confidential client or company data; a generic template or your own individually-authored analysis approach may be retained if it does not disclose confidential specifics, but the underlying client data itself must not be retained.",
+            "Does this policy apply to data about Contoso Corp employees themselves, not just customers? Yes — employee PII (social security numbers, compensation, medical information tied to a leave request) is classified Confidential under this policy exactly the same as customer data, and is subject to the same handling and incident-reporting rules.",
         ]),
     ]),
 ]
@@ -385,6 +460,10 @@ DOCS_PDF = [
         ("Manager Responsibilities", [
             "A new hire's manager is responsible for submitting the 30-60-90 day goals to HR, scheduling the check-ins described above, and confirming the new hire has been introduced to their assigned buddy within the first week. Managers who have not completed manager-fundamentals training may not yet approve PTO requests independently; HR co-approves in the interim.",
         ]),
+        ("Frequently Asked Questions", [
+            "What if my laptop hasn't arrived by my start date? Contact the IT Service Desk immediately; a loaner laptop is available for temporary use while your provisioned device is tracked down or replaced, so a shipping delay should never actually block your first day.",
+            "Do I need to complete all required trainings before I can start real work? No — trainings have their own deadlines (30 days for anti-harassment, 2 weeks for role-specific compliance training) and are not a prerequisite for beginning normal job responsibilities, except for the specific systems access gated behind Week One's IT security training and Code of Conduct acknowledgment.",
+        ]),
     ]),
     ("Offboarding Procedure", [
         ("Final Pay", [
@@ -409,6 +488,10 @@ DOCS_PDF = [
         ("Reference Requests", [
             "Contoso Corp provides only neutral employment verification (dates of employment and title) to external reference requests by default; a departing employee may request that their direct manager provide a more detailed personal reference, which is entirely the manager's individual choice to give, not a company-provided service.",
         ]),
+        ("Frequently Asked Questions", [
+            "Will I still get my final bonus or commission payout if I resign before the payout date? This depends on the specific compensation plan governing that bonus or commission, not this general Offboarding Procedure; check your compensation plan document or ask HR, since some plans require active employment on the payout date and others prorate based on time worked.",
+            "Can I take my company laptop's personal files with me before returning it? IT can arrange a supervised transfer of clearly personal files (photos, personal documents) before wiping the device, but this must be scheduled in advance through the IT Service Desk and cannot happen after the device access has already been disabled.",
+        ]),
     ]),
     ("Workplace Safety Guidelines", [
         ("Office Safety", [
@@ -429,6 +512,10 @@ DOCS_PDF = [
         ]),
         ("Hazardous Materials Handling", [
             "Offices with a print shop, lab space, or maintenance area maintain Safety Data Sheets for every chemical product on site, accessible through the Workplace Safety team's shared binder or portal. Employees who are not specifically trained and authorized should never attempt to clean up a chemical spill themselves; Facilities has a dedicated response protocol for this.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Do I need to report a near-miss (no injury, but something almost went wrong)? Yes — near-misses are specifically encouraged to be reported, since they often reveal a hazard before it actually causes an injury; the Incident Report Form has a specific near-miss option distinct from an actual injury report.",
+            "Who pays for a workers' compensation claim from a workplace injury? Workers' compensation insurance, which Contoso Corp carries as required by law, covers medical costs and partial wage replacement for a qualifying workplace injury; the employee does not pay out of pocket for a covered claim, and using workers' compensation does not count against an employee's PTO balance.",
         ]),
     ]),
     ("Tuition Reimbursement Program", [
@@ -451,6 +538,10 @@ DOCS_PDF = [
         ("Denial Appeals", [
             "An employee whose pre-approval request is denied may appeal once, in writing, to a review panel made up of one HR representative and one representative from Learning and Development, who were not involved in the original decision; the panel's decision on appeal is final.",
         ]),
+        ("Frequently Asked Questions", [
+            "Can I use tuition reimbursement for a program outside the United States? Yes, as long as the institution is internationally accredited and the coursework meets the same current-role-or-reasonable-career-path standard applied to domestic programs; currency conversion for reimbursement uses the exchange rate on the date of your payment.",
+            "What if I fail a single course in an otherwise multi-course program? Only the failed course is denied reimbursement; passing courses in the same program remain eligible, since eligibility is evaluated course by course, not for the program as a single unit.",
+        ]),
     ]),
     ("Employee Assistance Program Guide", [
         ("What the EAP Covers", [
@@ -471,6 +562,10 @@ DOCS_PDF = [
         ]),
         ("Household Member Eligibility", [
             "Household members eligible for EAP services include a spouse or domestic partner and any dependent living in the employee's home, including college-age dependents living away for school; the household member does not need to be enrolled in Contoso Corp's health insurance to be eligible for the EAP, since the two benefits are administered separately.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Will using the EAP show up anywhere in my personnel file? No — EAP usage is confidential and is never recorded in an employee's personnel file or shared with a manager; only aggregate, anonymized utilization statistics across the whole company are ever shared with Contoso Corp.",
+            "Can I use the EAP for a work-related stress issue, or only personal matters? Work-related stress, conflict with a colleague, and burnout are all explicitly within scope for EAP counseling; the EAP is not limited to personal or family matters.",
         ]),
     ]),
 ]
