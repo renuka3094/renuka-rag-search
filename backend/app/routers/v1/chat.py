@@ -84,6 +84,7 @@ async def chat_stream(payload: ChatRequest, db: Session = Depends(get_db)):
                     "chunk_id": c.chunk_id,
                     "document_id": c.document_id,
                     "document_title": c.document_title,
+                    "section_heading": c.section_heading,
                     "snippet": c.content[:280],
                     "rank": i + 1,
                 }

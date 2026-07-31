@@ -70,8 +70,20 @@ def get_usage_stats(db: Session) -> dict:
 
 
 def add_citations(db: Session, message_id: str, citations: list[dict]) -> None:
+    # citations dicts carry a few frontend-display-only keys (e.g.
+    # section_heading, for the Sources panel) that aren't columns on the
+    # Citation model — only pass through what it actually accepts.
     for c in citations:
-        db.add(Citation(message_id=message_id, **c))
+        db.add(
+            Citation(
+                message_id=message_id,
+                chunk_id=c["chunk_id"],
+                document_id=c["document_id"],
+                document_title=c["document_title"],
+                snippet=c["snippet"],
+                rank=c["rank"],
+            )
+        )
 
 
 def get_conversation_with_messages(db: Session, conversation_id: str) -> Conversation | None:

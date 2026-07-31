@@ -2,8 +2,8 @@ import { ChevronDown, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import ChatInput from "../components/ChatInput";
-import CitationModal from "../components/CitationModal";
 import MessageBubble from "../components/MessageBubble";
+import SourcesPanel from "../components/SourcesPanel";
 import { streamChat } from "../lib/api";
 
 // Providers this deployment is actually wired to try (see
@@ -21,7 +21,7 @@ export default function ChatPage() {
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [streaming, setStreaming] = useState(false);
-  const [activeCitation, setActiveCitation] = useState(null);
+  const [activeSources, setActiveSources] = useState(null);
   const [provider, setProvider] = useState(MODEL_OPTIONS[0].id);
   const scrollRef = useRef(null);
 
@@ -135,13 +135,13 @@ export default function ChatPage() {
           </div>
         )}
         {messages.map((m, i) => (
-          <MessageBubble key={m.id ?? i} message={m} onCitationClick={setActiveCitation} />
+          <MessageBubble key={m.id ?? i} message={m} onSourcesClick={setActiveSources} />
         ))}
       </div>
 
       <ChatInput onSend={handleSend} disabled={streaming} />
 
-      <CitationModal citation={activeCitation} onClose={() => setActiveCitation(null)} />
+      <SourcesPanel citations={activeSources} onClose={() => setActiveSources(null)} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { AlertTriangle, Check, Copy, FileText, ShieldAlert } from "lucide-react"
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-export default function MessageBubble({ message, onCitationClick }) {
+export default function MessageBubble({ message, onSourcesClick }) {
   const isUser = message.role === "user";
   const [copied, setCopied] = useState(false);
 
@@ -66,20 +66,14 @@ export default function MessageBubble({ message, onCitationClick }) {
         )}
 
         {message.citations?.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-            {message.citations.map((c) => (
-              <button
-                key={c.chunk_id}
-                className="pill pill-neutral"
-                title={c.snippet}
-                onClick={() => onCitationClick?.(c)}
-                style={{ cursor: "pointer", border: "1px solid var(--border-subtle)" }}
-              >
-                <FileText size={12} strokeWidth={1.75} />
-                [{c.rank}] {c.document_title}
-              </button>
-            ))}
-          </div>
+          <button
+            className="pill pill-neutral"
+            onClick={() => onSourcesClick?.(message.citations)}
+            style={{ cursor: "pointer", border: "1px solid var(--border-subtle)", alignSelf: "flex-start" }}
+          >
+            <FileText size={12} strokeWidth={1.75} />
+            Sources · {message.citations.length}
+          </button>
         )}
       </div>
     </div>
