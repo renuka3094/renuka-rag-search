@@ -58,16 +58,17 @@
   --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@media (prefers-color-scheme: light) {
-  .theme-auto {
-    --bg-canvas: #f6f5f3;
-    --bg-surface: #ffffff;
-    --bg-surface-raised: #ffffff;
-    --bg-inset: #f0eeeb;
-    --border-subtle: #e4e1db;
-    --border-strong: #d3cfc6;
-    --text-primary: #182127;
-    --text-secondary: #4b5560;
-    --text-tertiary: #7a8590;
-  }
+/* Manual light mode, toggled by the user (see LayoutShell.jsx) — dark is
+   the DataFactZ default regardless of OS preference; this class only
+   applies when the user explicitly switches. */
+.theme-light {
+  --bg-canvas: #f6f5f3;
+  --bg-surface: #ffffff;
+  --bg-surface-raised: #ffffff;
+  --bg-inset: #f0eeeb;
+  --border-subtle: #e4e1db;
+  --border-strong: #d3cfc6;
+  --text-primary: #182127;
+  --text-secondary: #4b5560;
+  --text-tertiary: #7a8590;
 }

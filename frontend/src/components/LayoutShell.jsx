@@ -1,5 +1,6 @@
-import { MessageSquare, LayoutGrid, Database } from "lucide-react";
+import { LayoutGrid, MessageSquare, Database, Moon, Sun } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 /**
  * Shared layout shell (Section 6.2 frontend requirement: "a shared layout
@@ -9,14 +10,30 @@ import { NavLink, Outlet } from "react-router-dom";
  * family.
  */
 export default function LayoutShell() {
+  const [theme, setTheme] = useState(() => localStorage.getItem("df-theme") || "dark");
+
+  useEffect(() => {
+    localStorage.setItem("df-theme", theme);
+  }, [theme]);
+
   return (
-    <div className="app-shell theme-auto">
+    <div className={`app-shell${theme === "light" ? " theme-light" : ""}`}>
       <aside className="sidebar">
-        <div className="brand-mark">
-          <div className="mark" />
-          <div className="name">
-            Data<span>FactZ</span>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "6px 8px 22px" }}>
+          <div className="brand-mark" style={{ padding: 0 }}>
+            <div className="mark" />
+            <div className="name">
+              Data<span>FactZ</span>
+            </div>
           </div>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            style={{ padding: 6 }}
+          >
+            {theme === "dark" ? <Sun size={14} strokeWidth={2} /> : <Moon size={14} strokeWidth={2} />}
+          </button>
         </div>
 
         <nav style={{ display: "flex", flexDirection: "column", gap: 2 }}>

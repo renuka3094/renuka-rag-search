@@ -1,8 +1,16 @@
-import { AlertTriangle, FileText, ShieldAlert } from "lucide-react";
+import { AlertTriangle, Check, Copy, FileText, ShieldAlert } from "lucide-react";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 export default function MessageBubble({ message, onCitationClick }) {
   const isUser = message.role === "user";
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(message.content);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
 
   return (
     <div style={{ display: "flex", justifyContent: isUser ? "flex-end" : "flex-start", padding: "6px 0" }}>
@@ -33,9 +41,27 @@ export default function MessageBubble({ message, onCitationClick }) {
           </div>
         </div>
 
-        {!isUser && message.model && !message.refused && (
-          <div style={{ fontSize: 11.5, color: "var(--text-tertiary)", paddingLeft: 2 }}>
-            {message.model}
+        {!isUser && !message.refused && message.content && (
+          <div style={{ display: "flex", alignItems: "center", gap: 8, paddingLeft: 2 }}>
+            <button
+              onClick={handleCopy}
+              title="Copy response"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 4,
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "var(--text-tertiary)",
+                padding: 2,
+              }}
+            >
+              {copied ? <Check size={13} strokeWidth={2} /> : <Copy size={13} strokeWidth={1.75} />}
+            </button>
+            {message.model && (
+              <span style={{ fontSize: 11.5, color: "var(--text-tertiary)" }}>{message.model}</span>
+            )}
           </div>
         )}
 
