@@ -37,3 +37,7 @@ Can I use accrued PTO to extend my parental leave beyond the paid weeks this pol
 Do both parents get leave if we both work at Contoso Corp and are having a child together? Yes — each employee's eligibility and leave duration is determined individually based on their own role (birthing or non-birthing parent), not reduced or shared because both parents work at the same company.
 
 What if my adoption falls through after I've already started my leave? Leave taken in good-faith anticipation of a placement that does not finalize is not clawed back; HR will work with the employee individually on returning to work, since this is treated as a sensitive personal situation rather than a policy violation.
+
+## Roles and Responsibilities
+
+HR is responsible for confirming eligibility and processing leave paperwork. Payroll is responsible for ensuring leave is paid correctly and benefits contributions continue as described. Managers are responsible for planning coverage during an employee's leave without pressuring the employee about work while they are out.

@@ -41,3 +41,7 @@ Can I be disciplined for something I post on my personal social media outside of
 What if I'm unsure whether a gift crosses the $75 threshold? When in doubt, disclose it to your manager and Compliance; disclosing a gift that turns out to be under the threshold carries no consequence, while failing to disclose one that turns out to be over the threshold is treated as a more serious violation than the gift itself.
 
 Is a report to the Ethics Hotline really anonymous if I want it to be? Yes — the hotline is operated by an independent third party specifically so that fully anonymous reports are possible; Contoso Corp only receives the substance of the report, not identifying information, unless the reporter chooses to provide it.
+
+## Enforcement
+
+Violations of this Code of Conduct are addressed through Contoso Corp's standard progressive discipline process for most infractions (verbal warning, written warning, final warning, termination), except for severe violations (violence, harassment, theft, deliberate data breach) which may result in immediate termination on a first offense, bypassing the earlier steps entirely.

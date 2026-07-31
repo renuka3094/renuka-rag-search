@@ -49,3 +49,7 @@ Can I permanently relocate to a different state while remaining remote-eligible?
 Is remote eligibility the same as a formal flexible-work accommodation for a medical condition? No — a medical accommodation goes through the separate Accommodation Requests process described in the Anti-Harassment and Non-Discrimination Policy and can grant remote work even for a role not otherwise designated remote-eligible, since it is evaluated under different legal standards.
 
 What happens to my equipment stipend if I switch from remote-eligible to hybrid partway through the year? The one-time $300 equipment stipend is not repeated or clawed back; the $50 monthly internet stipend stops as of the pay period following the schedule change, prorated for the transition month.
+
+## Roles and Responsibilities
+
+Department heads are responsible for designating which roles are remote-eligible and reviewing that designation at each performance cycle. IT is responsible for provisioning and supporting remote equipment. Employees are responsible for maintaining a secure, reasonably professional workspace and meeting the core-hours reachability standard.

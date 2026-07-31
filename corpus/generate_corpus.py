@@ -57,6 +57,13 @@ DOCS_MARKDOWN = [
         ("Related Policies and Scope", [
             "This handbook does not cover compensation structure, equity grants, or sales commission plans, which are governed by separate, role-specific compensation documents distributed at hire and updated as needed; employees with compensation questions should contact their HR Business Partner rather than searching this handbook for an answer it does not contain.",
         ]),
+        ("Key Definitions", [
+            "'Full-time employee' means an employee regularly scheduled for 30 or more hours per week. 'Part-time employee' means an employee regularly scheduled for fewer than 30 hours per week but at least 15. Employees scheduled for fewer than 15 hours per week are classified as 'variable-hour' and are not eligible for most benefits described in this handbook.",
+            "'Continuous employment' means employment without a break in service; a leave of absence approved under any policy in this handbook (parental leave, medical leave, military leave) does not break continuous employment for purposes of calculating tenure-based eligibility (for example, PTO accrual rate or 401(k) vesting).",
+        ]),
+        ("Roles and Responsibilities", [
+            "People Operations owns the content and accuracy of this handbook. Managers are responsible for applying policies consistently within their team and escalating any situation they are unsure how to handle rather than guessing. Employees are responsible for reading and following the policies that apply to their employment status.",
+        ]),
     ]),
     ("Paid Time Off Policy", [
         ("Accrual", [
@@ -96,6 +103,12 @@ DOCS_MARKDOWN = [
         ("Related Policies", [
             "This policy should be read alongside the Parental Leave Policy for any leave related to birth, adoption, or foster placement, and alongside the Remote Work Policy's core-hours section for how PTO interacts with a remote work schedule spanning multiple time zones.",
         ]),
+        ("Key Definitions", [
+            "'Accrued PTO' means the portion of an employee's annual PTO allotment they have earned to date based on months of service, as opposed to their full annual entitlement. 'Rolled-over PTO' means unused accrued PTO carried into the next calendar year under the Rollover section above, tracked separately from the new year's fresh accrual.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Employees are responsible for submitting requests with adequate notice and tracking their own balance in the HR portal. Managers are responsible for responding to requests within the required window and applying approval criteria consistently across their team. Payroll is responsible for accurate accrual calculation and final payout at termination.",
+        ]),
     ]),
     ("Remote Work Policy", [
         ("Eligibility", [
@@ -130,6 +143,9 @@ DOCS_MARKDOWN = [
             "Is remote eligibility the same as a formal flexible-work accommodation for a medical condition? No — a medical accommodation goes through the separate Accommodation Requests process described in the Anti-Harassment and Non-Discrimination Policy and can grant remote work even for a role not otherwise designated remote-eligible, since it is evaluated under different legal standards.",
             "What happens to my equipment stipend if I switch from remote-eligible to hybrid partway through the year? The one-time $300 equipment stipend is not repeated or clawed back; the $50 monthly internet stipend stops as of the pay period following the schedule change, prorated for the transition month.",
         ]),
+        ("Roles and Responsibilities", [
+            "Department heads are responsible for designating which roles are remote-eligible and reviewing that designation at each performance cycle. IT is responsible for provisioning and supporting remote equipment. Employees are responsible for maintaining a secure, reasonably professional workspace and meeting the core-hours reachability standard.",
+        ]),
     ]),
     ("Code of Conduct", [
         ("Professional Behavior", [
@@ -160,6 +176,9 @@ DOCS_MARKDOWN = [
             "What if I'm unsure whether a gift crosses the $75 threshold? When in doubt, disclose it to your manager and Compliance; disclosing a gift that turns out to be under the threshold carries no consequence, while failing to disclose one that turns out to be over the threshold is treated as a more serious violation than the gift itself.",
             "Is a report to the Ethics Hotline really anonymous if I want it to be? Yes — the hotline is operated by an independent third party specifically so that fully anonymous reports are possible; Contoso Corp only receives the substance of the report, not identifying information, unless the reporter chooses to provide it.",
         ]),
+        ("Enforcement", [
+            "Violations of this Code of Conduct are addressed through Contoso Corp's standard progressive discipline process for most infractions (verbal warning, written warning, final warning, termination), except for severe violations (violence, harassment, theft, deliberate data breach) which may result in immediate termination on a first offense, bypassing the earlier steps entirely.",
+        ]),
     ]),
     ("Parental Leave Policy", [
         ("Eligibility", [
@@ -186,6 +205,9 @@ DOCS_MARKDOWN = [
             "Can I use accrued PTO to extend my parental leave beyond the paid weeks this policy provides? Yes, PTO can be used consecutively after the paid parental leave period ends, subject to normal PTO request and approval rules; many employees use this to extend an effective leave by an additional 1-3 weeks depending on their PTO balance.",
             "Do both parents get leave if we both work at Contoso Corp and are having a child together? Yes — each employee's eligibility and leave duration is determined individually based on their own role (birthing or non-birthing parent), not reduced or shared because both parents work at the same company.",
             "What if my adoption falls through after I've already started my leave? Leave taken in good-faith anticipation of a placement that does not finalize is not clawed back; HR will work with the employee individually on returning to work, since this is treated as a sensitive personal situation rather than a policy violation.",
+        ]),
+        ("Roles and Responsibilities", [
+            "HR is responsible for confirming eligibility and processing leave paperwork. Payroll is responsible for ensuring leave is paid correctly and benefits contributions continue as described. Managers are responsible for planning coverage during an employee's leave without pressuring the employee about work while they are out.",
         ]),
     ]),
 ]
@@ -220,6 +242,9 @@ DOCS_HTML = [
             "Can I expense a gift for a colleague's birthday or a team celebration? Small team morale expenses (a birthday cake, a team lunch) up to $15 per person are reimbursable under the Team Building sub-category; this is separate from the Business Entertainment category used for client meals.",
             "How long does reimbursement actually take once a report is approved? Approved reports are paid out on the next scheduled reimbursement cycle, which runs weekly; most employees see reimbursement within 5-7 business days of manager approval.",
         ]),
+        ("Roles and Responsibilities", [
+            "Employees are responsible for submitting accurate, timely, well-documented reports. Managers are responsible for reviewing reports for reasonableness and policy compliance before approving, not simply rubber-stamping every submission. Finance is responsible for final compliance review, payout processing, and identifying any pattern of policy misuse.",
+        ]),
     ]),
     ("Travel Policy", [
         ("Booking Travel", [
@@ -249,6 +274,9 @@ DOCS_HTML = [
             "What if my flight is delayed or cancelled and I need to book a new one on the spot? Contact the Travel Desk's after-hours emergency line first if reasonably possible, since they can often rebook within policy faster than a traveler booking independently; if an independent booking is unavoidable, keep all documentation and it will be reviewed for reimbursement under the same policy limits.",
             "Are conference registration fees covered under this Travel Policy? No — conference and training registration fees are reimbursed under the separate Learning and Development budget, not the Travel Policy, though travel and lodging to attend that conference does fall under this policy.",
         ]),
+        ("Key Definitions", [
+            "'Duty-of-care coverage' means Contoso Corp's ability, through the Travel Portal, to know a traveling employee's whereabouts and reach them in an emergency. A 'bleisure trip' means personal travel time appended to a business trip, reimbursable only for the business-dates portion of the itinerary.",
+        ]),
     ]),
     ("Health Insurance Benefits Guide", [
         ("Plan Options", [
@@ -277,6 +305,9 @@ DOCS_HTML = [
             "What happens to my HSA balance in the HDHP if I switch to a different plan tier next year? The HSA balance is the employee's own money and is never forfeited or clawed back regardless of plan changes; however, Contoso Corp's annual HSA contribution is only made while the employee is actively enrolled in the HDHP specifically.",
             "Is out-of-network care ever covered under the PPO plans? Yes, at a reduced reimbursement rate compared to in-network care, and subject to a separate, higher out-of-network deductible; the HDHP has more limited out-of-network coverage than the two PPO tiers.",
         ]),
+        ("Roles and Responsibilities", [
+            "HR administers plan enrollment and qualifying life event changes. The plan's insurance carrier administers claims and provider network questions directly; Contoso Corp does not process individual medical claims itself. Employees are responsible for reviewing plan documents and asking HR before assuming a specific service is covered.",
+        ]),
     ]),
     ("Dental and Vision Benefits", [
         ("Dental Coverage", [
@@ -298,6 +329,9 @@ DOCS_HTML = [
         ("Frequently Asked Questions", [
             "Are teeth whitening or other cosmetic dental procedures covered? No, cosmetic-only procedures with no functional or health necessity are excluded from the dental plan entirely; a procedure with both a cosmetic and functional component (for example, a crown that is both structurally necessary and improves appearance) is covered based on the functional necessity, not the cosmetic benefit.",
             "Can I use my vision allowance on both glasses and contacts in the same 12-month period? No, the $150 allowance applies once per 12-month period toward either frames/lenses or contacts, not both; employees who want both should plan which to prioritize within a given benefit year.",
+        ]),
+        ("Key Definitions", [
+            "'Preventive care' means routine cleanings, exams, and X-rays not tied to treating a specific problem. 'Major procedure' means a dental procedure like a crown or root canal that addresses significant structural damage or decay, as opposed to a 'basic procedure' like a filling.",
         ]),
     ]),
     ("401(k) Retirement Plan Summary", [
@@ -322,6 +356,9 @@ DOCS_HTML = [
             "If I leave Contoso Corp, what happens to my 401(k) balance? Your own contributions and any vested match remain yours; you can leave the balance in the plan (if above a minimum threshold), roll it into an IRA or a new employer's plan, or take a cash distribution subject to taxes and an early-withdrawal penalty if you are under 59 and a half.",
             "Can I contribute more than the standard IRS annual limit if I'm over 50? Yes, employees aged 50 and over may make additional catch-up contributions above the standard IRS limit, and the plan automatically permits this once the system detects an employee's date of birth qualifies.",
             "Does Contoso Corp's match apply to catch-up contributions? No, the company match formula applies only up to the percentages described above on eligible pay; catch-up contributions do not receive an additional match beyond that.",
+        ]),
+        ("Roles and Responsibilities", [
+            "HR and Payroll administer enrollment, contribution elections, and auto-enrollment defaults. The plan's third-party recordkeeper administers individual account access, investment elections, loans, and withdrawals directly; Contoso Corp itself does not have access to make changes to an individual employee's account.",
         ]),
     ]),
 ]
@@ -348,6 +385,9 @@ DOCS_DOCX = [
             "Can I refer more than one candidate for the same role? Yes, there is no limit on the number of referrals a single employee can submit, and each successful referral that results in a hire earns its own separate bonus, subject to the same eligibility and payout rules.",
             "What counts as a 'successful' referral for bonus purposes? A referral is successful once the referred candidate is hired and completes their first day; the bonus payout schedule (50% at 90 days, 50% at 6 months) then begins from that first day, regardless of how long the hiring process itself took.",
         ]),
+        ("Roles and Responsibilities", [
+            "Talent Acquisition maintains the Hard-to-Fill Roles list and audits payouts for legitimacy. Payroll processes the actual bonus disbursement on the schedule above. Referring employees are responsible for submitting the referral before the candidate applies independently, since only referrals submitted first are credited.",
+        ]),
     ]),
     ("Performance Review Process", [
         ("Review Cadence", [
@@ -371,6 +411,9 @@ DOCS_DOCX = [
             "If I'm rated Meets Expectations every cycle, can I still be promoted? Yes — a consistent Meets Expectations rating combined with demonstrated readiness for the next level's scope of work is a legitimate basis for promotion; a higher rating is not a strict prerequisite, though it does strengthen a promotion case during calibration.",
             "Can my rating be changed after calibration if I disagree with it? The calibration outcome is final for that review cycle, but a documented, substantive disagreement can be raised through the rating explanation meeting and, if unresolved, escalated to the HR Business Partner; this can inform how the *next* cycle's calibration is run, even though it does not retroactively change a already-finalized rating.",
         ]),
+        ("Key Definitions", [
+            "'Calibration' means the cross-team session where manager-proposed ratings are compared and adjusted for consistency before being finalized. A 'rating explanation meeting' is a follow-up conversation an employee may request to understand the reasoning behind their final calibrated rating.",
+        ]),
     ]),
     ("Anti-Harassment and Non-Discrimination Policy", [
         ("Policy Statement", [
@@ -391,6 +434,9 @@ DOCS_DOCX = [
         ("Frequently Asked Questions", [
             "Can I report a concern about my own manager's behavior? Yes — the Ethics Hotline exists specifically so that concerns involving a direct manager, or anyone else in an employee's normal reporting chain, can be raised to someone outside that chain; reporting through the hotline does not require going through the manager in question first.",
             "What happens to the accused employee during a harassment investigation? Depending on the severity of the allegation, the accused employee may be placed on administrative leave (paid, not disciplinary) pending the outcome of the investigation, to prevent any possibility of continued harm or retaliation while the facts are being established.",
+        ]),
+        ("Enforcement", [
+            "A substantiated violation of this policy results in discipline proportionate to severity, ranging from a documented warning to immediate termination for severe conduct; Contoso Corp does not apply a rigid one-size-fits-all penalty, since the appropriate response depends on the facts of each specific investigation.",
         ]),
     ]),
     ("IT Acceptable Use Policy", [
@@ -414,6 +460,9 @@ DOCS_DOCX = [
             "Can I use my personal password manager for company account passwords? Yes, as long as the password manager itself supports multi-factor authentication; storing company passwords in an unsecured note, spreadsheet, or a password manager without MFA is a policy violation regardless of how strong the individual passwords themselves are.",
             "What should I do if I accidentally click a phishing link? Report it to security@contoso-corp.example immediately, even if you're not sure anything happened — do not wait to see if there are consequences first. Immediate reporting lets Security check for and contain any compromise quickly, and no employee is disciplined for reporting a mistake in good faith.",
         ]),
+        ("Roles and Responsibilities", [
+            "IT Security maintains endpoint protection tools and investigates policy violations. Employees are responsible for not circumventing security tools and for reporting suspected phishing or compromise promptly. Managers are responsible for ensuring their team completes required security training on schedule.",
+        ]),
     ]),
     ("Data Security and Confidentiality Policy", [
         ("Data Classification", [
@@ -434,6 +483,9 @@ DOCS_DOCX = [
         ("Frequently Asked Questions", [
             "Can I keep a copy of a presentation I made for a client after I leave Contoso Corp? Only the parts that do not contain Confidential client or company data; a generic template or your own individually-authored analysis approach may be retained if it does not disclose confidential specifics, but the underlying client data itself must not be retained.",
             "Does this policy apply to data about Contoso Corp employees themselves, not just customers? Yes — employee PII (social security numbers, compensation, medical information tied to a leave request) is classified Confidential under this policy exactly the same as customer data, and is subject to the same handling and incident-reporting rules.",
+        ]),
+        ("Key Definitions", [
+            "'Confidential data' means data classified as such under the three-tier system described above (Public, Internal, Confidential). A 'data processing agreement' is a signed contract with a vendor governing how they may handle Confidential data shared with them, required before any such sharing occurs.",
         ]),
     ]),
 ]
@@ -464,6 +516,9 @@ DOCS_PDF = [
             "What if my laptop hasn't arrived by my start date? Contact the IT Service Desk immediately; a loaner laptop is available for temporary use while your provisioned device is tracked down or replaced, so a shipping delay should never actually block your first day.",
             "Do I need to complete all required trainings before I can start real work? No — trainings have their own deadlines (30 days for anti-harassment, 2 weeks for role-specific compliance training) and are not a prerequisite for beginning normal job responsibilities, except for the specific systems access gated behind Week One's IT security training and Code of Conduct acknowledgment.",
         ]),
+        ("Roles and Responsibilities", [
+            "HR owns the offer packet, I-9 completion, and benefits enrollment. IT owns equipment provisioning and systems access. The hiring manager owns setting 30-60-90 day goals and conducting the scheduled check-ins. The assigned buddy owns informal cultural onboarding support.",
+        ]),
     ]),
     ("Offboarding Procedure", [
         ("Final Pay", [
@@ -492,6 +547,9 @@ DOCS_PDF = [
             "Will I still get my final bonus or commission payout if I resign before the payout date? This depends on the specific compensation plan governing that bonus or commission, not this general Offboarding Procedure; check your compensation plan document or ask HR, since some plans require active employment on the payout date and others prorate based on time worked.",
             "Can I take my company laptop's personal files with me before returning it? IT can arrange a supervised transfer of clearly personal files (photos, personal documents) before wiping the device, but this must be scheduled in advance through the IT Service Desk and cannot happen after the device access has already been disabled.",
         ]),
+        ("Roles and Responsibilities", [
+            "HR coordinates the overall offboarding timeline and conducts the exit interview. IT disables access and processes equipment returns. Payroll calculates and issues final pay including PTO payout. The departing employee's manager is responsible for a knowledge-transfer plan so ongoing work is not disrupted.",
+        ]),
     ]),
     ("Workplace Safety Guidelines", [
         ("Office Safety", [
@@ -516,6 +574,9 @@ DOCS_PDF = [
         ("Frequently Asked Questions", [
             "Do I need to report a near-miss (no injury, but something almost went wrong)? Yes — near-misses are specifically encouraged to be reported, since they often reveal a hazard before it actually causes an injury; the Incident Report Form has a specific near-miss option distinct from an actual injury report.",
             "Who pays for a workers' compensation claim from a workplace injury? Workers' compensation insurance, which Contoso Corp carries as required by law, covers medical costs and partial wage replacement for a qualifying workplace injury; the employee does not pay out of pocket for a covered claim, and using workers' compensation does not count against an employee's PTO balance.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Facilities maintains building safety equipment and coordinates floor wardens. The Workplace Safety team runs ergonomic assessments and safety training. Every employee is responsible for reporting hazards, injuries, and near-misses promptly, regardless of how minor they may seem.",
         ]),
     ]),
     ("Tuition Reimbursement Program", [
@@ -542,6 +603,9 @@ DOCS_PDF = [
             "Can I use tuition reimbursement for a program outside the United States? Yes, as long as the institution is internationally accredited and the coursework meets the same current-role-or-reasonable-career-path standard applied to domestic programs; currency conversion for reimbursement uses the exchange rate on the date of your payment.",
             "What if I fail a single course in an otherwise multi-course program? Only the failed course is denied reimbursement; passing courses in the same program remain eligible, since eligibility is evaluated course by course, not for the program as a single unit.",
         ]),
+        ("Roles and Responsibilities", [
+            "The employee's manager confirms the course is relevant to the employee's role or reasonable career path. HR verifies eligibility and processes the pre-approval. Payroll disburses reimbursement upon proof of a passing grade and applies applicable tax withholding for amounts above the annual IRS-favorable threshold.",
+        ]),
     ]),
     ("Employee Assistance Program Guide", [
         ("What the EAP Covers", [
@@ -566,6 +630,9 @@ DOCS_PDF = [
         ("Frequently Asked Questions", [
             "Will using the EAP show up anywhere in my personnel file? No — EAP usage is confidential and is never recorded in an employee's personnel file or shared with a manager; only aggregate, anonymized utilization statistics across the whole company are ever shared with Contoso Corp.",
             "Can I use the EAP for a work-related stress issue, or only personal matters? Work-related stress, conflict with a colleague, and burnout are all explicitly within scope for EAP counseling; the EAP is not limited to personal or family matters.",
+        ]),
+        ("Roles and Responsibilities", [
+            "The third-party EAP provider delivers counseling and referral services directly and independently of Contoso Corp. HR communicates the benefit's existence and how to access it. Managers may suggest the EAP to a struggling employee but are never responsible for assessing or managing a mental health situation themselves.",
         ]),
     ]),
 ]

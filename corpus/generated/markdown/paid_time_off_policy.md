@@ -57,3 +57,11 @@ Does a company holiday that falls during my PTO count against my PTO balance? No
 ## Related Policies
 
 This policy should be read alongside the Parental Leave Policy for any leave related to birth, adoption, or foster placement, and alongside the Remote Work Policy's core-hours section for how PTO interacts with a remote work schedule spanning multiple time zones.
+
+## Key Definitions
+
+'Accrued PTO' means the portion of an employee's annual PTO allotment they have earned to date based on months of service, as opposed to their full annual entitlement. 'Rolled-over PTO' means unused accrued PTO carried into the next calendar year under the Rollover section above, tracked separately from the new year's fresh accrual.
+
+## Roles and Responsibilities
+
+Employees are responsible for submitting requests with adequate notice and tracking their own balance in the HR portal. Managers are responsible for responding to requests within the required window and applying approval criteria consistently across their team. Payroll is responsible for accurate accrual calculation and final payout at termination.

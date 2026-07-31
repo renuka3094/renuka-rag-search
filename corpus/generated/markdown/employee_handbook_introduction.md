@@ -53,3 +53,13 @@ Who decides if a new situation isn't clearly covered by any policy here? People 
 ## Related Policies and Scope
 
 This handbook does not cover compensation structure, equity grants, or sales commission plans, which are governed by separate, role-specific compensation documents distributed at hire and updated as needed; employees with compensation questions should contact their HR Business Partner rather than searching this handbook for an answer it does not contain.
+
+## Key Definitions
+
+'Full-time employee' means an employee regularly scheduled for 30 or more hours per week. 'Part-time employee' means an employee regularly scheduled for fewer than 30 hours per week but at least 15. Employees scheduled for fewer than 15 hours per week are classified as 'variable-hour' and are not eligible for most benefits described in this handbook.
+
+'Continuous employment' means employment without a break in service; a leave of absence approved under any policy in this handbook (parental leave, medical leave, military leave) does not break continuous employment for purposes of calculating tenure-based eligibility (for example, PTO accrual rate or 401(k) vesting).
+
+## Roles and Responsibilities
+
+People Operations owns the content and accuracy of this handbook. Managers are responsible for applying policies consistently within their team and escalating any situation they are unsure how to handle rather than guessing. Employees are responsible for reading and following the policies that apply to their employment status.
