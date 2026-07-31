@@ -1,0 +1,9 @@
+# Prevent git from ever attempting line-ending normalization on binary
+# formats — silent corruption risk otherwise on some checkouts (this repo
+# has no .gitattributes at all currently, which is why git warned about
+# CRLF conversion on the corpus PDFs).
+*.pdf binary
+*.docx binary
+*.doc binary
+*.xlsx binary
+*.pptx binary
