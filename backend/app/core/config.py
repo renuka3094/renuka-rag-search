@@ -41,8 +41,14 @@ class Settings(BaseSettings):
     azure_foundry_api_version: str = "2024-05-01-preview"
 
     # Generation
-    generation_provider: str = "azure_openai"  # "azure_openai" | "azure_foundry" | "claude" | "deepseek"
+    generation_provider: str = "azure_openai"  # "azure_openai" | "azure_foundry" | "azure_v1" | "claude" | "deepseek"
     azure_openai_chat_deployment: str = "gpt-4o-mini"
+    # DeepSeek reached through the shared Azure AI Foundry project (same
+    # endpoint/key as azure_v1, different deployment name) — used by the
+    # in-UI model switcher's "DeepSeek (Azure)" option. Distinct from
+    # deepseek_api_key/deepseek_base_url below, which are for calling
+    # DeepSeek's own platform directly (a separate account/key).
+    azure_deepseek_deployment: str = ""
     deepseek_api_key: str = ""
     deepseek_base_url: str = "https://api.deepseek.com"
     deepseek_model: str = "deepseek-chat"

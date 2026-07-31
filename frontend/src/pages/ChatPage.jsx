@@ -7,14 +7,13 @@ import SourcesPanel from "../components/SourcesPanel";
 import { streamChat } from "../lib/api";
 
 // Providers this deployment is actually wired to try (see
-// backend/app/services/generation.py). Picking "DeepSeek" here without a
-// DEEPSEEK_API_KEY set server-side will surface a real upstream error —
-// that's intentional, not a bug: it's the same "compare at least two
-// options" requirement, made visible in the product instead of only in
-// the design doc.
+// backend/app/services/generation.py). Both options are reached through
+// the same shared Azure AI Foundry project/endpoint — just different
+// deployment names — satisfying the "compare at least two options for
+// generation" requirement live in the product, not only in the design doc.
 const MODEL_OPTIONS = [
   { id: "azure_v1", label: "GPT-5.5 (Azure)" },
-  { id: "deepseek", label: "DeepSeek" },
+  { id: "azure_deepseek", label: "DeepSeek-V3.2 (Azure)" },
 ];
 
 export default function ChatPage() {

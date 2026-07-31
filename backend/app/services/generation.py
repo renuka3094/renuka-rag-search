@@ -44,6 +44,8 @@ def resolve_model_name(provider: str) -> str:
     settings = get_settings()
     if provider in ("azure_openai", "azure_foundry", "azure_v1"):
         return settings.azure_openai_chat_deployment
+    if provider == "azure_deepseek":
+        return settings.azure_deepseek_deployment
     if provider == "deepseek":
         return settings.deepseek_model
     if provider == "claude":
@@ -63,6 +65,10 @@ async def stream_answer(user_turn: str, provider: str | None = None) -> AsyncGen
             yield token
     elif provider == "azure_v1":
         async for token in _stream_azure_v1(user_turn):
+            yield token
+    elif provider == "azure_deepseek":
+        # Same Foundry endpoint/key as azure_v1, different deployment name.
+        async for token in _stream_azure_v1(user_turn, model=settings.azure_deepseek_deployment):
             yield token
     elif provider == "deepseek":
         async for token in _stream_openai_compatible(
@@ -106,7 +112,7 @@ async def _stream_azure_openai_compatible(user_turn: str) -> AsyncGenerator[str,
                     yield token
 
 
-async def _stream_azure_v1(user_turn: str) -> AsyncGenerator[str, None]:
+async def _stream_azure_v1(user_turn: str, model: str | None = None) -> AsyncGenerator[str, None]:
     """
     Azure OpenAI 'v1' API — confirmed against this project's own sample
     code (OpenAI Python SDK, base_url ending in /openai/v1, Bearer-token
@@ -116,6 +122,10 @@ async def _stream_azure_v1(user_turn: str) -> AsyncGenerator[str, None]:
     AZURE_OPENAI_ENDPOINT should be just the host, e.g.
     https://ai-training-msftfoundry.services.ai.azure.com — this function
     appends /openai/v1/chat/completions itself.
+
+    `model` lets a caller target a different deployment on this same
+    endpoint/key (e.g. the "azure_deepseek" provider passes the DeepSeek
+    deployment name here) — defaults to the configured chat deployment.
     """
     settings = get_settings()
     base = settings.azure_openai_endpoint.rstrip("/")
@@ -124,7 +134,7 @@ async def _stream_azure_v1(user_turn: str) -> AsyncGenerator[str, None]:
     url = f"{base}/chat/completions"
     headers = {"Authorization": f"Bearer {settings.azure_openai_api_key}", "Content-Type": "application/json"}
     payload = {
-        "model": settings.azure_openai_chat_deployment,
+        "model": model or settings.azure_openai_chat_deployment,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_turn},
