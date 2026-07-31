@@ -33,3 +33,15 @@ Managers must respond to a PTO request within 2 business days; a request that is
 Upon voluntary or involuntary termination, Contoso Corp pays out accrued and unused PTO at the employee's final base rate of pay, in accordance with state law. This payout is included in the employee's final paycheck, calculated as the number of unused accrued days multiplied by the employee's daily base pay rate at the time of termination.
 
 Employees terminated for cause forfeit any rolled-over PTO from a prior year but still receive payout for PTO accrued in the current calendar year, where required by state law. Employees who resign voluntarily receive payout for all accrued and unused PTO, including any properly rolled-over balance, regardless of the reason for resignation.
+
+## Sick Leave
+
+Sick leave is drawn from the same PTO bank described above rather than a separate sick-leave allotment, except in states that legally require a distinct, separately tracked sick-leave balance (for example, several states mandate a minimum number of paid sick days independent of any general PTO policy). In those states, Contoso Corp maintains a separate statutory sick-leave balance alongside the standard PTO balance, and employees in those states can see both balances listed separately in the HR portal.
+
+Extended illness beyond what standard PTO can reasonably cover should be discussed with HR about short-term disability coverage or FMLA leave, both of which are described in separate policies; PTO is not intended to cover a multi-week medical absence on its own.
+
+## Bereavement and Jury Duty Leave
+
+Employees receive up to 5 paid bereavement days for the death of an immediate family member (spouse, child, parent, sibling) and up to 2 paid days for an extended family member, in addition to standard PTO; bereavement days do not draw down the employee's PTO balance.
+
+Employees summoned for jury duty receive paid leave for the full duration of their service, with no cap on the number of days, upon providing the court summons to HR; employees called as a witness in a legal proceeding unrelated to Contoso Corp business should discuss the specific situation with HR, since coverage depends on the nature of the proceeding.

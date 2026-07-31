@@ -40,6 +40,15 @@ DOCS_MARKDOWN = [
             "Policy updates are announced company-wide by email at least 2 weeks before taking effect, except where a change is required immediately by law, in which case the effective date and a plain-language summary of the change are still communicated as soon as practically possible.",
             "A version history of every policy change since January 1, 2026 is kept by People Operations and is available on request; this handbook itself does not display prior versions inline to keep it readable, but nothing is changed silently.",
         ]),
+        ("Handbook Governance and Amendments", [
+            "Proposed changes to this handbook originate from People Operations, Legal, or Finance depending on the policy area, and go through a review committee before publication. Employees may submit a suggestion for a policy clarification or change through the internal Policy Feedback form; suggestions are reviewed quarterly, though not every suggestion results in a change.",
+            "Emergency amendments (for example, a policy change required by a sudden change in state law) may bypass the standard quarterly review cycle, but still require sign-off from both Legal and the VP of People Operations before publication, and are always accompanied by a clear notice explaining why the normal notice period was shortened.",
+            "This handbook is published in English as the authoritative version. A Spanish-language translation is maintained for convenience and reviewed for accuracy at each major update, but in the event of any discrepancy between the two versions, the English version governs.",
+        ]),
+        ("Where to Get Help", [
+            "For a question about pay or benefits enrollment, contact HR directly rather than your manager, since managers do not have access to payroll or benefits systems. For a question about a specific policy's intent or history, People Operations can provide context the written policy text alone may not capture.",
+            "The Knowledge Assistant referenced throughout this handbook is intended for quick lookups and is grounded strictly in this document set; for anything involving a personal or sensitive situation (a leave request tied to a health condition, a harassment concern), employees should go directly to HR or the Ethics Hotline rather than relying on the assistant.",
+        ]),
     ]),
     ("Paid Time Off Policy", [
         ("Accrual", [
@@ -63,6 +72,14 @@ DOCS_MARKDOWN = [
             "Upon voluntary or involuntary termination, Contoso Corp pays out accrued and unused PTO at the employee's final base rate of pay, in accordance with state law. This payout is included in the employee's final paycheck, calculated as the number of unused accrued days multiplied by the employee's daily base pay rate at the time of termination.",
             "Employees terminated for cause forfeit any rolled-over PTO from a prior year but still receive payout for PTO accrued in the current calendar year, where required by state law. Employees who resign voluntarily receive payout for all accrued and unused PTO, including any properly rolled-over balance, regardless of the reason for resignation.",
         ]),
+        ("Sick Leave", [
+            "Sick leave is drawn from the same PTO bank described above rather than a separate sick-leave allotment, except in states that legally require a distinct, separately tracked sick-leave balance (for example, several states mandate a minimum number of paid sick days independent of any general PTO policy). In those states, Contoso Corp maintains a separate statutory sick-leave balance alongside the standard PTO balance, and employees in those states can see both balances listed separately in the HR portal.",
+            "Extended illness beyond what standard PTO can reasonably cover should be discussed with HR about short-term disability coverage or FMLA leave, both of which are described in separate policies; PTO is not intended to cover a multi-week medical absence on its own.",
+        ]),
+        ("Bereavement and Jury Duty Leave", [
+            "Employees receive up to 5 paid bereavement days for the death of an immediate family member (spouse, child, parent, sibling) and up to 2 paid days for an extended family member, in addition to standard PTO; bereavement days do not draw down the employee's PTO balance.",
+            "Employees summoned for jury duty receive paid leave for the full duration of their service, with no cap on the number of days, upon providing the court summons to HR; employees called as a witness in a legal proceeding unrelated to Contoso Corp business should discuss the specific situation with HR, since coverage depends on the nature of the proceeding.",
+        ]),
     ]),
     ("Remote Work Policy", [
         ("Eligibility", [
@@ -85,6 +102,13 @@ DOCS_MARKDOWN = [
             "Approval is not guaranteed and depends on whether Contoso Corp has a registered business presence or applicable tax treaty in the destination country; some countries are excluded entirely due to sanctions or data residency restrictions, and the current excluded-country list is maintained by Legal and available on the internal Compliance portal.",
             "Working from outside the country for 20 consecutive business days or fewer does not require this approval process, but employees should still notify their manager for coverage-planning purposes and confirm with IT that company equipment will function reliably given local network conditions.",
         ]),
+        ("Home Workspace Safety and Security", [
+            "Remote employees are expected to maintain a workspace free of obvious safety hazards (exposed wiring, blocked exits) and are covered by workers' compensation for injuries that occur during work hours and are directly related to work tasks, in the same way an office-based injury would be covered. A brief self-certification of workspace safety is required annually through the HR portal.",
+            "Confidential data accessed while remote must follow the same rules as the Data Security and Confidentiality Policy — for example, a screen displaying customer data should not be visible through a window or to household members, and company video calls involving confidential topics should use a virtual background or a private room where reasonably available.",
+        ]),
+        ("Coworking Spaces and Alternate Locations", [
+            "Employees may work from a coworking space or coffee shop occasionally, but should avoid discussing confidential business matters audibly in a public space, and should never leave a company laptop unattended and unlocked. Coworking space membership fees are not reimbursed under this policy; employees who want a dedicated coworking membership should discuss it with their manager as a separate budget request.",
+        ]),
     ]),
     ("Code of Conduct", [
         ("Professional Behavior", [
@@ -103,6 +127,13 @@ DOCS_MARKDOWN = [
             "Concerns about conduct violations can be reported confidentially through the Contoso Ethics Hotline at 1-800-555-0142 or ethics@contoso-corp.example. Reports may be made anonymously, and the hotline is operated by an independent third party, not by Contoso Corp's own HR team, so that employees can report concerns involving HR itself without a conflict.",
             "Retaliation against a good-faith reporter is strictly prohibited and is itself grounds for termination, regardless of the reporter's role or seniority relative to the person retaliating; this protection applies even when the underlying report is ultimately not substantiated, as long as it was made honestly and in good faith.",
         ]),
+        ("Social Media Use", [
+            "Employees are free to discuss their work at Contoso Corp on personal social media, but may not share confidential or non-public information (unreleased product details, financial results before public announcement, customer names) under any circumstances. Personal social media posts should include a disclaimer that views expressed are the employee's own when discussing anything work-related, particularly for employees in customer-facing or public-facing roles.",
+            "Employees representing Contoso Corp on official company social media accounts must follow the separate Brand and Communications guidelines maintained by Marketing, which include a stricter approval process for public statements than this general policy requires for personal accounts.",
+        ]),
+        ("Political and Outside Activity", [
+            "Employees may engage in political activity and personal outside employment on their own time, as long as it does not create a conflict of interest (see the Conflicts of Interest section) and does not use Contoso Corp resources, branding, or work time. Contoso Corp does not endorse any candidate or party as a company, and employees should not imply company endorsement when engaging in personal political activity.",
+        ]),
     ]),
     ("Parental Leave Policy", [
         ("Eligibility", [
@@ -117,6 +148,13 @@ DOCS_MARKDOWN = [
         ("Benefits Continuation", [
             "Health, dental, and vision benefits continue uninterrupted during parental leave at the employee's normal contribution rate; Contoso Corp continues to pay its employer share as if the employee were actively working, for the full duration of the paid leave.",
             "401(k) contributions pause during unpaid portions of leave (if any) but resume automatically upon return to active payroll status, with no re-enrollment required; since parental leave under this policy is fully paid for its entire duration, 401(k) contributions in practice do not pause at all unless an employee takes additional unpaid leave beyond what this policy covers.",
+        ]),
+        ("Return-to-Work Transition", [
+            "Employees returning from parental leave may request a gradual return schedule (for example, part-time hours for the first 2 weeks back) with manager approval; this is a courtesy accommodation, not a guaranteed right, and compensation during a gradual return is prorated to actual hours worked once the fully-paid leave period has ended.",
+            "Contoso Corp provides a private lactation room in every office location, available on a first-come basis, and remote employees returning from leave are not required to use video during calls if doing so would require compromising the privacy needed for pumping breaks.",
+        ]),
+        ("Leave for Pregnancy Loss or Complications", [
+            "Employees experiencing a pregnancy loss, stillbirth, or a serious pregnancy-related medical complication are eligible for up to 2 weeks of paid leave in addition to any leave otherwise available under this policy or short-term disability coverage, without needing to have reached the standard 90-day eligibility threshold described above.",
         ]),
     ]),
 ]
@@ -139,6 +177,13 @@ DOCS_HTML = [
             "Contoso Corp does not reimburse alcohol for solo meals, traffic or parking fines, personal entertainment, or spa services, regardless of business context. This list is intentionally non-exhaustive; Finance reserves discretion to decline any expense that does not have a clear, direct business purpose even if it is not explicitly named here.",
             "Personal upgrades (seat upgrades not required for medical reasons, hotel room upgrades beyond standard) are also non-reimbursable and must be paid for out of pocket, with only the standard-rate portion reimbursed if a receipt shows a blended charge covering both the standard rate and the upgrade.",
         ]),
+        ("Corporate Card Usage", [
+            "Employees who travel more than twice per quarter are issued a Contoso Corp corporate card; the card should be used for all reimbursable business expenses when available, since corporate card transactions pre-populate the expense report and reduce the chance of a missing-receipt delay.",
+            "Personal charges on a corporate card are prohibited even if the employee intends to reimburse Contoso Corp directly; repeated personal use of a corporate card, even when repaid, is grounds for card revocation and may be treated as a Code of Conduct violation depending on frequency and amount.",
+        ]),
+        ("International Expense Handling", [
+            "Expenses incurred in a foreign currency are converted to U.S. dollars using the Concur portal's daily exchange rate as of the transaction date, not the date the expense report is submitted; employees should keep the original foreign-currency receipt even though the report displays the converted amount.",
+        ]),
     ]),
     ("Travel Policy", [
         ("Booking Travel", [
@@ -157,6 +202,12 @@ DOCS_HTML = [
             "Rideshare and taxi are preferred over rental cars for trips under 3 days. Rental cars require a stated business justification in the expense report and should be booked at the economy or compact tier unless the trip involves transporting equipment or more than 2 colleagues.",
             "Rideshare or taxi expenses between an employee's home and the airport for business travel are reimbursable; the same trip for a personal vacation appended to business travel (a 'bleisure' trip) is only reimbursable for the portion of the itinerary tied to the actual business dates.",
         ]),
+        ("Passports, Visas, and Travel Documents", [
+            "Employees traveling internationally for business are responsible for maintaining a valid passport with at least 6 months of remaining validity beyond the trip's return date, as many countries deny entry otherwise. Visa application fees for business travel are reimbursable; Contoso Corp's Travel Desk can advise on typical visa processing times but does not guarantee approval, which remains at the discretion of the destination country.",
+        ]),
+        ("Travel Insurance and Emergency Assistance", [
+            "All business travel booked through the Contoso Travel Portal automatically includes emergency medical and evacuation insurance at no cost to the employee; the insurance provider's 24/7 emergency line is printed on the travel itinerary confirmation and should be contacted first in a medical emergency abroad, before local emergency services if reasonably possible, since the insurer can coordinate care and cost directly.",
+        ]),
     ]),
     ("Health Insurance Benefits Guide", [
         ("Plan Options", [
@@ -173,6 +224,13 @@ DOCS_HTML = [
         ("Qualifying Life Events", [
             "Marriage, divorce, birth or adoption of a child, and loss of other coverage all qualify for a special enrollment period outside the standard windows, within 30 days of the event. Supporting documentation (marriage certificate, birth certificate, loss-of-coverage letter) must be submitted with the enrollment change.",
         ]),
+        ("Prescription Drug Coverage", [
+            "All three medical plans use the same four-tier prescription drug formulary: generic, preferred brand, non-preferred brand, and specialty. Generic drugs have the lowest copay across all three plan tiers, and employees are encouraged to ask their doctor about a generic alternative before a non-preferred brand is prescribed, since the cost difference to the employee can be substantial.",
+            "Specialty medications (typically for chronic or complex conditions) require prior authorization and are filled through a designated specialty pharmacy rather than a standard retail pharmacy, which also provides additional clinical support for managing those medications.",
+        ]),
+        ("Telehealth Services", [
+            "All three medical plans include unlimited telehealth visits for general medical concerns at a lower copay than an in-person visit, available 24/7 through the plan's telehealth app. Telehealth is not a substitute for emergency care, and the plan's telehealth provider will direct a caller to emergency services if the described symptoms warrant it.",
+        ]),
     ]),
     ("Dental and Vision Benefits", [
         ("Dental Coverage", [
@@ -185,6 +243,12 @@ DOCS_HTML = [
         ("Orthodontia", [
             "Orthodontic treatment for dependents under 19 is covered at 50%, up to a lifetime maximum of $2,000 per covered individual. Adult orthodontia is not covered under the standard plan; employees seeking adult orthodontic coverage should ask HR about the optional voluntary dental buy-up plan, which is offered separately at full employee cost.",
         ]),
+        ("Waiting Periods", [
+            "New enrollees have no waiting period for preventive dental or vision care, but major dental procedures (crowns, root canals) have a 6-month waiting period from the enrollment date, waived for employees who can show 12 continuous months of prior dental coverage under a previous employer's plan.",
+        ]),
+        ("Out-of-Network Care", [
+            "Both the dental and vision plans allow out-of-network care, but reimbursement is based on a set 'usual and customary' fee schedule rather than the provider's actual billed amount, meaning an employee choosing an out-of-network provider may owe a larger out-of-pocket balance than the same procedure would cost in-network.",
+        ]),
     ]),
     ("401(k) Retirement Plan Summary", [
         ("Company Match", [
@@ -196,6 +260,13 @@ DOCS_HTML = [
         ]),
         ("Eligibility and Enrollment", [
             "Employees become eligible to enroll in the 401(k) plan on the first day of the month following 30 days of employment, and are auto-enrolled at a 3% contribution rate unless they opt out or select a different rate within their first 45 days. Employees who take no action are auto-enrolled into the plan's default target-date fund, based on an assumed retirement age of 65.",
+        ]),
+        ("Investment Options", [
+            "The plan offers a lineup of 18 index and actively managed funds spanning U.S. equity, international equity, bonds, and a suite of target-date funds. Employees can change their fund allocation at any time through the plan provider's website, with changes typically taking effect within 1-2 business days.",
+        ]),
+        ("Loans and Hardship Withdrawals", [
+            "Active employees may borrow up to 50% of their vested balance (maximum $50,000) as a 401(k) loan, repaid through payroll deduction over up to 5 years at a fixed interest rate set at loan origination; an unpaid loan balance becomes a taxable distribution if the employee separates from Contoso Corp before it is repaid.",
+            "Hardship withdrawals are permitted for a narrow set of IRS-defined reasons (preventing eviction, certain medical expenses, funeral expenses) and require documentation; unlike a loan, a hardship withdrawal is not repaid and is subject to income tax and, in most cases, an early-withdrawal penalty if the employee is under 59 and a half.",
         ]),
     ]),
 ]
@@ -212,6 +283,12 @@ DOCS_DOCX = [
         ("Eligibility", [
             "All active full-time employees are eligible to refer candidates, except employees on the Talent Acquisition team (whose role already involves recruiting) and hiring managers referring into their own open requisitions, to avoid a conflict of interest. Part-time employees are eligible to refer but the bonus amount is not pro-rated; it is paid at the full standard or hard-to-fill amount regardless of the referring employee's own schedule.",
         ]),
+        ("Rehire and Boomerang Referrals", [
+            "Referring a former Contoso Corp employee (a 'boomerang' hire) is eligible for the same bonus structure as any other referral, provided the former employee left in good standing and at least 6 months have passed since their departure; referring a former employee who was terminated for cause is not eligible for a bonus under any circumstance.",
+        ]),
+        ("Program Review and Fraud Prevention", [
+            "Talent Acquisition audits referral bonus payouts quarterly to confirm the referring employee had a genuine prior relationship with the candidate; a referral submitted with no evidence of a real connection (for example, submitted the same day a resume was already in the applicant tracking system from a job board) may be denied pending review.",
+        ]),
     ]),
     ("Performance Review Process", [
         ("Review Cadence", [
@@ -224,6 +301,13 @@ DOCS_DOCX = [
             "Manager ratings go through a cross-team calibration session before being finalized, to ensure consistent application of the rating scale across departments and prevent rating inflation or deflation in any single team.",
             "Employees may request a rating explanation meeting with their manager within 5 business days of receiving a final rating, particularly if the calibrated rating differs from the manager's initial proposed rating; HR Business Partners attend these meetings on request if the employee prefers a neutral third party present.",
         ]),
+        ("Performance Improvement Plans", [
+            "An employee rated Does Not Meet Expectations, or Partially Meets Expectations for two consecutive review cycles, is placed on a formal Performance Improvement Plan (PIP) lasting 30 to 90 days, with specific, measurable goals agreed upon by the employee and manager and reviewed jointly with HR.",
+            "Successful completion of a PIP removes the employee from formal monitoring but does not erase the underlying review history; failure to meet PIP goals typically results in termination, though HR reviews each case individually before that outcome is finalized.",
+        ]),
+        ("Promotion Nominations", [
+            "Promotions are nominated by a manager during the annual review cycle and go through the same cross-team calibration process as ratings, to ensure consistent promotion standards across departments; an employee may also self-nominate for promotion consideration, which their manager is required to bring to calibration even if the manager does not personally support it.",
+        ]),
     ]),
     ("Anti-Harassment and Non-Discrimination Policy", [
         ("Policy Statement", [
@@ -234,6 +318,12 @@ DOCS_DOCX = [
         ]),
         ("Non-Retaliation", [
             "Contoso Corp strictly prohibits retaliation against anyone who reports a concern in good faith or participates in an investigation, even if the investigation does not substantiate the original complaint. Retaliation can include obvious actions like termination or demotion, but also subtler actions like exclusion from meetings or projects, and both are treated with equal seriousness under this policy.",
+        ]),
+        ("Third-Party Harassment", [
+            "This policy also protects employees from harassment by a client, vendor, or other third party, not only by fellow Contoso Corp employees. An employee who experiences harassment from a client should report it the same way as internal harassment; Contoso Corp will address the situation with the client company directly, up to and including ending the business relationship if necessary.",
+        ]),
+        ("Accommodation Requests", [
+            "Employees may request a reasonable accommodation for a disability, a sincerely held religious belief, or a pregnancy-related condition through HR's Accommodations Request Form; requests are evaluated on a case-by-case, interactive basis with the employee, and a request is denied only if it would impose an undue hardship on Contoso Corp's operations.",
         ]),
     ]),
     ("IT Acceptable Use Policy", [
@@ -246,6 +336,13 @@ DOCS_DOCX = [
         ("Password Requirements", [
             "All Contoso accounts require multi-factor authentication and a password of at least 14 characters, rotated every 180 days. Password reuse across the last 10 passwords is blocked by the identity system, and passwords found in a known public breach database are automatically rejected at creation time regardless of how they otherwise score on length and complexity.",
         ]),
+        ("Bring Your Own Device (BYOD)", [
+            "Employees may access company email and calendar from a personal phone through the approved mobile management app, which enforces a device passcode and allows Contoso Corp to remotely wipe only the company data partition, not the entire personal device, if the phone is lost or the employee departs.",
+            "Personal devices may not be used to access systems containing Confidential data (as defined in the Data Security and Confidentiality Policy); that level of access is restricted to company-issued and company-managed devices only.",
+        ]),
+        ("Generative AI Tool Usage", [
+            "Employees may use approved generative AI tools for drafting and research, but must not paste Confidential or Internal data (customer information, unreleased financials, source code) into any AI tool that is not on the IT-approved list, since many public AI tools retain submitted input for model training by default.",
+        ]),
     ]),
     ("Data Security and Confidentiality Policy", [
         ("Data Classification", [
@@ -256,6 +353,12 @@ DOCS_DOCX = [
         ]),
         ("Incident Reporting", [
             "Suspected data breaches must be reported to security@contoso-corp.example within 1 hour of discovery, per the Incident Response Runbook. Delayed reporting can affect Contoso Corp's ability to meet legal breach-notification deadlines, so timeliness matters more than certainty — report suspected incidents even before they are confirmed, since the Security team, not the reporting employee, is responsible for determining whether a suspected incident is a genuine breach.",
+        ]),
+        ("Vendor Data Sharing", [
+            "Sharing Confidential data with a third-party vendor requires a signed Data Processing Agreement reviewed by Legal, and the vendor must be added to Contoso Corp's approved vendor list before any data is transferred; this applies even to a well-known, reputable vendor, since the requirement is about the specific agreement in place, not the vendor's general reputation.",
+        ]),
+        ("Post-Employment Confidentiality", [
+            "The confidentiality obligations in this policy continue after an employee leaves Contoso Corp, indefinitely for trade secrets and for a minimum of 3 years for other Confidential data, as outlined in the confidentiality agreement every employee signs at hire. Former employees remain bound by this even if their specific employment agreement is silent on the point, since this policy applies independently of the individual agreement.",
         ]),
     ]),
 ]
@@ -275,6 +378,13 @@ DOCS_PDF = [
             "Every new hire is assigned a peer buddy from a different team for their first 60 days, to provide an informal point of contact outside the direct reporting line for questions about culture and unwritten norms. Buddies are volunteers who have been at Contoso Corp for at least 1 year, and the buddy relationship is entirely optional to continue past the 60-day period if both people find it useful.",
             "Buddies receive a short onboarding guide of their own, covering common new-hire questions and where to redirect anything outside their own knowledge, so the buddy relationship supplements rather than replaces the manager and HR as the authoritative source for policy questions.",
         ]),
+        ("Required Trainings", [
+            "Beyond Contoso 101 and IT security training, new hires must complete anti-harassment training within their first 30 days and, for people managers specifically, a manager-fundamentals training within their first 90 days covering performance reviews, PTO approvals, and how to handle a conduct concern.",
+            "Role-specific compliance training (for example, data-handling training for anyone touching Confidential data) is assigned automatically based on job code and must be completed within 2 weeks of assignment; overdue mandatory training triggers an automated reminder to both the employee and their manager.",
+        ]),
+        ("Manager Responsibilities", [
+            "A new hire's manager is responsible for submitting the 30-60-90 day goals to HR, scheduling the check-ins described above, and confirming the new hire has been introduced to their assigned buddy within the first week. Managers who have not completed manager-fundamentals training may not yet approve PTO requests independently; HR co-approves in the interim.",
+        ]),
     ]),
     ("Offboarding Procedure", [
         ("Final Pay", [
@@ -293,6 +403,12 @@ DOCS_PDF = [
         ("Rehire Eligibility", [
             "Employees who leave in good standing are generally eligible for rehire and may reapply for future openings at any time; their prior tenure does not automatically carry forward for benefits or PTO accrual purposes, since rehire is treated as a new hire date unless a specific rehire agreement states otherwise.",
         ]),
+        ("Non-Disclosure Reminder", [
+            "As part of offboarding, HR reviews the confidentiality obligations from the Data Security and Confidentiality Policy with every departing employee, which continue to apply after departure regardless of the reason for leaving. Departing employees are asked to confirm in writing that they have not retained any Confidential data on personal devices or accounts.",
+        ]),
+        ("Reference Requests", [
+            "Contoso Corp provides only neutral employment verification (dates of employment and title) to external reference requests by default; a departing employee may request that their direct manager provide a more detailed personal reference, which is entirely the manager's individual choice to give, not a company-provided service.",
+        ]),
     ]),
     ("Workplace Safety Guidelines", [
         ("Office Safety", [
@@ -307,6 +423,12 @@ DOCS_PDF = [
         ("Emergency Procedures", [
             "In the event of a fire alarm, employees must evacuate immediately via the nearest marked exit and gather at their office's designated assembly point; re-entry is not permitted until the floor warden or emergency services confirm it is safe. Employees with a mobility limitation that affects evacuation should register with Facilities in advance so a specific evacuation plan (for example, using a designated evacuation chair) is prepared ahead of any actual emergency.",
             "Severe weather procedures (tornado, earthquake, or similar regional hazards) differ by office location and are posted on each floor's safety board separately from the standard fire evacuation route, since sheltering in place is often the correct response for these hazards rather than evacuating the building.",
+        ]),
+        ("Workplace Violence Prevention", [
+            "Contoso Corp has zero tolerance for threats or acts of violence in the workplace, whether from an employee, client, or visitor. Any concern about a potential threat, even one that seems minor or ambiguous, should be reported immediately to Facilities Security and HR rather than waiting to see if the situation escalates.",
+        ]),
+        ("Hazardous Materials Handling", [
+            "Offices with a print shop, lab space, or maintenance area maintain Safety Data Sheets for every chemical product on site, accessible through the Workplace Safety team's shared binder or portal. Employees who are not specifically trained and authorized should never attempt to clean up a chemical spill themselves; Facilities has a dedicated response protocol for this.",
         ]),
     ]),
     ("Tuition Reimbursement Program", [
@@ -323,6 +445,12 @@ DOCS_PDF = [
             "Employees who voluntarily resign within 12 months of receiving tuition reimbursement must repay the reimbursed amount on a prorated basis, as outlined in the Tuition Reimbursement Agreement signed at approval time — for example, an employee who resigns 6 months after receiving reimbursement repays 50% of the amount received.",
             "Repayment is not required if the employee is involuntarily terminated without cause, or if they leave due to a qualifying medical hardship documented with HR; the repayment obligation exists specifically to discourage using the benefit and then immediately resigning, not to penalize departures outside the employee's control.",
         ]),
+        ("Covered Program Types", [
+            "Eligible programs include undergraduate and graduate degree programs, professional certifications directly relevant to the employee's role (for example, a cloud certification for an engineer), and accredited online courses; unaccredited bootcamps are reviewed case by case and are not automatically covered the way accredited coursework is.",
+        ]),
+        ("Denial Appeals", [
+            "An employee whose pre-approval request is denied may appeal once, in writing, to a review panel made up of one HR representative and one representative from Learning and Development, who were not involved in the original decision; the panel's decision on appeal is final.",
+        ]),
     ]),
     ("Employee Assistance Program Guide", [
         ("What the EAP Covers", [
@@ -337,6 +465,12 @@ DOCS_PDF = [
         ("Crisis Support", [
             "For an immediate mental health crisis, the EAP line offers a dedicated crisis option available at the same number, staffed by licensed clinicians who can also connect the caller to local emergency services if needed. This crisis option does not count against the standard 6-session annual allotment described above.",
             "Managers who become aware an employee may be in crisis are encouraged, but not required, to share the EAP crisis number directly; managers are never expected to assess or manage a mental health crisis themselves, and doing so is explicitly discouraged in favor of connecting the employee to the trained clinicians on the EAP line.",
+        ]),
+        ("Manager Referrals", [
+            "A manager who is concerned about an employee's wellbeing based on observable workplace performance (not a diagnosis, which managers are not qualified to make) may suggest the employee consider the EAP; this suggestion must never be framed as a condition of continued employment, and using it that way is itself a policy violation.",
+        ]),
+        ("Household Member Eligibility", [
+            "Household members eligible for EAP services include a spouse or domestic partner and any dependent living in the employee's home, including college-age dependents living away for school; the household member does not need to be enrolled in Contoso Corp's health insurance to be eligible for the EAP, since the two benefits are administered separately.",
         ]),
     ]),
 ]

@@ -19,3 +19,13 @@ Parental leave runs concurrently with any leave required under the Family and Me
 Health, dental, and vision benefits continue uninterrupted during parental leave at the employee's normal contribution rate; Contoso Corp continues to pay its employer share as if the employee were actively working, for the full duration of the paid leave.
 
 401(k) contributions pause during unpaid portions of leave (if any) but resume automatically upon return to active payroll status, with no re-enrollment required; since parental leave under this policy is fully paid for its entire duration, 401(k) contributions in practice do not pause at all unless an employee takes additional unpaid leave beyond what this policy covers.
+
+## Return-to-Work Transition
+
+Employees returning from parental leave may request a gradual return schedule (for example, part-time hours for the first 2 weeks back) with manager approval; this is a courtesy accommodation, not a guaranteed right, and compensation during a gradual return is prorated to actual hours worked once the fully-paid leave period has ended.
+
+Contoso Corp provides a private lactation room in every office location, available on a first-come basis, and remote employees returning from leave are not required to use video during calls if doing so would require compromising the privacy needed for pumping breaks.
+
+## Leave for Pregnancy Loss or Complications
+
+Employees experiencing a pregnancy loss, stillbirth, or a serious pregnancy-related medical complication are eligible for up to 2 weeks of paid leave in addition to any leave otherwise available under this policy or short-term disability coverage, without needing to have reached the standard 90-day eligibility threshold described above.

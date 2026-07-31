@@ -31,3 +31,13 @@ Working from outside the United States for more than 20 consecutive business day
 Approval is not guaranteed and depends on whether Contoso Corp has a registered business presence or applicable tax treaty in the destination country; some countries are excluded entirely due to sanctions or data residency restrictions, and the current excluded-country list is maintained by Legal and available on the internal Compliance portal.
 
 Working from outside the country for 20 consecutive business days or fewer does not require this approval process, but employees should still notify their manager for coverage-planning purposes and confirm with IT that company equipment will function reliably given local network conditions.
+
+## Home Workspace Safety and Security
+
+Remote employees are expected to maintain a workspace free of obvious safety hazards (exposed wiring, blocked exits) and are covered by workers' compensation for injuries that occur during work hours and are directly related to work tasks, in the same way an office-based injury would be covered. A brief self-certification of workspace safety is required annually through the HR portal.
+
+Confidential data accessed while remote must follow the same rules as the Data Security and Confidentiality Policy — for example, a screen displaying customer data should not be visible through a window or to household members, and company video calls involving confidential topics should use a virtual background or a private room where reasonably available.
+
+## Coworking Spaces and Alternate Locations
+
+Employees may work from a coworking space or coffee shop occasionally, but should avoid discussing confidential business matters audibly in a public space, and should never leave a company laptop unattended and unlocked. Coworking space membership fees are not reimbursed under this policy; employees who want a dedicated coworking membership should discuss it with their manager as a separate budget request.

@@ -27,3 +27,17 @@ Each section is self-contained and cross-references related policies where relev
 Policy updates are announced company-wide by email at least 2 weeks before taking effect, except where a change is required immediately by law, in which case the effective date and a plain-language summary of the change are still communicated as soon as practically possible.
 
 A version history of every policy change since January 1, 2026 is kept by People Operations and is available on request; this handbook itself does not display prior versions inline to keep it readable, but nothing is changed silently.
+
+## Handbook Governance and Amendments
+
+Proposed changes to this handbook originate from People Operations, Legal, or Finance depending on the policy area, and go through a review committee before publication. Employees may submit a suggestion for a policy clarification or change through the internal Policy Feedback form; suggestions are reviewed quarterly, though not every suggestion results in a change.
+
+Emergency amendments (for example, a policy change required by a sudden change in state law) may bypass the standard quarterly review cycle, but still require sign-off from both Legal and the VP of People Operations before publication, and are always accompanied by a clear notice explaining why the normal notice period was shortened.
+
+This handbook is published in English as the authoritative version. A Spanish-language translation is maintained for convenience and reviewed for accuracy at each major update, but in the event of any discrepancy between the two versions, the English version governs.
+
+## Where to Get Help
+
+For a question about pay or benefits enrollment, contact HR directly rather than your manager, since managers do not have access to payroll or benefits systems. For a question about a specific policy's intent or history, People Operations can provide context the written policy text alone may not capture.
+
+The Knowledge Assistant referenced throughout this handbook is intended for quick lookups and is grounded strictly in this document set; for anything involving a personal or sensitive situation (a leave request tied to a health condition, a harassment concern), employees should go directly to HR or the Ethics Hotline rather than relying on the assistant.
