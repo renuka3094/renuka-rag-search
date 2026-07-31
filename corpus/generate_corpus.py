@@ -519,6 +519,13 @@ DOCS_PDF = [
         ("Roles and Responsibilities", [
             "HR owns the offer packet, I-9 completion, and benefits enrollment. IT owns equipment provisioning and systems access. The hiring manager owns setting 30-60-90 day goals and conducting the scheduled check-ins. The assigned buddy owns informal cultural onboarding support.",
         ]),
+        ("Office-Specific Orientation", [
+            "New hires assigned to an office (as opposed to fully remote) receive a building tour on their first day covering emergency exits, restrooms, the kitchen and coffee area, printer and supply locations, and how badge access works for their specific floor. Employees should keep their badge on them at all times while in the building, since propping doors open or letting an unbadged person in behind them ('tailgating') is a security violation regardless of how well the new hire knows the person.",
+            "Remote new hires receive an equivalent virtual orientation covering the same practical topics adapted for a home office context, plus a specific walkthrough of how to request the equipment and home office stipend described in the Remote Work Policy, since remote new hires do not automatically receive equipment the way an office-based new hire's desk is pre-set up.",
+        ]),
+        ("Feedback on the Onboarding Experience", [
+            "At the 90-day mark, new hires receive a short onboarding experience survey, separate from their performance conversation, asking specifically about the checklist above: whether equipment arrived on time, whether the buddy program was useful, and whether required trainings were clear. This feedback is reviewed quarterly by People Operations and has directly driven changes to this checklist in the past, including the addition of the loaner-laptop process described in the FAQ above.",
+        ]),
     ]),
     ("Offboarding Procedure", [
         ("Final Pay", [
@@ -550,6 +557,13 @@ DOCS_PDF = [
         ("Roles and Responsibilities", [
             "HR coordinates the overall offboarding timeline and conducts the exit interview. IT disables access and processes equipment returns. Payroll calculates and issues final pay including PTO payout. The departing employee's manager is responsible for a knowledge-transfer plan so ongoing work is not disrupted.",
         ]),
+        ("Knowledge Transfer Requirements", [
+            "Departing employees, working with their manager, complete a Knowledge Transfer document covering active projects, key contacts, where important files and credentials live (without including actual passwords, which should never be written down), and any recurring task or deadline the employee normally owns. This is due before the employee's last day, and managers should build time for it into the employee's final two weeks rather than treating it as an afterthought.",
+            "For roles with significant client-facing responsibility, the manager also schedules a formal handoff call with the affected client before the employee's last day, so the client hears about the transition directly rather than discovering it after the fact.",
+        ]),
+        ("Involuntary Termination Procedures", [
+            "Involuntary terminations are conducted jointly by the manager and an HR Business Partner, never by a manager alone, to ensure consistency and legal compliance. The employee is provided a written notice of termination stating the effective date and, where applicable under state law, the reason. IT disables system access at the start of the termination meeting, not afterward, to reduce the risk of any data access issue during a sensitive conversation.",
+        ]),
     ]),
     ("Workplace Safety Guidelines", [
         ("Office Safety", [
@@ -577,6 +591,12 @@ DOCS_PDF = [
         ]),
         ("Roles and Responsibilities", [
             "Facilities maintains building safety equipment and coordinates floor wardens. The Workplace Safety team runs ergonomic assessments and safety training. Every employee is responsible for reporting hazards, injuries, and near-misses promptly, regardless of how minor they may seem.",
+        ]),
+        ("Visitor and Contractor Safety", [
+            "Visitors and contractors must sign in at reception, wear a visible visitor badge at all times, and be escorted by their Contoso Corp host in any area beyond the main lobby and designated meeting rooms. Contractors performing maintenance or construction work are required to submit a safety plan to Facilities in advance for any work involving power tools, ladders above 6 feet, or temporary blocking of an emergency exit route.",
+        ]),
+        ("Security Cameras and Access Control", [
+            "Common areas (lobbies, hallways, parking structures) are monitored by security cameras for safety purposes; footage is retained for 30 days and reviewed only in connection with a specific reported incident, not for general employee monitoring. Badge access logs are similarly retained and may be reviewed as part of a safety incident or security investigation.",
         ]),
     ]),
     ("Tuition Reimbursement Program", [
@@ -606,6 +626,12 @@ DOCS_PDF = [
         ("Roles and Responsibilities", [
             "The employee's manager confirms the course is relevant to the employee's role or reasonable career path. HR verifies eligibility and processes the pre-approval. Payroll disburses reimbursement upon proof of a passing grade and applies applicable tax withholding for amounts above the annual IRS-favorable threshold.",
         ]),
+        ("Time Off for Coursework", [
+            "Tuition reimbursement does not include paid time off to attend class or study; employees are expected to schedule coursework around work hours where possible, or use standard PTO for any classes that unavoidably conflict with the work schedule. Employees pursuing an employer-requested certification (as opposed to a personal career-development choice) may be granted paid study time at their manager's discretion, tracked separately from PTO.",
+        ]),
+        ("Program Funding Cap and Prioritization", [
+            "The tuition reimbursement program has an overall annual company-wide budget; in the rare event that approved requests in a given year would exceed that budget, Learning and Development prioritizes requests tied to a documented business-critical skill gap over general career-development requests, though this cap has not been reached in any prior program year.",
+        ]),
     ]),
     ("Employee Assistance Program Guide", [
         ("What the EAP Covers", [
@@ -633,6 +659,12 @@ DOCS_PDF = [
         ]),
         ("Roles and Responsibilities", [
             "The third-party EAP provider delivers counseling and referral services directly and independently of Contoso Corp. HR communicates the benefit's existence and how to access it. Managers may suggest the EAP to a struggling employee but are never responsible for assessing or managing a mental health situation themselves.",
+        ]),
+        ("In-Person and Virtual Session Options", [
+            "EAP counseling sessions are available both virtually (video or phone) and in person through the provider's local network of clinicians, depending on employee preference and local availability; virtual sessions are generally available faster than in-person appointments and are equally covered under the same 6-session allotment.",
+        ]),
+        ("Relationship to Short-Term Disability", [
+            "The EAP is not a substitute for short-term disability coverage, which provides income replacement during an extended medical leave including for a mental health condition; an employee whose counseling needs extend beyond what the EAP's 6 free sessions can address should discuss short-term disability and continued treatment options with HR, who can explain how the two benefits work together.",
         ]),
     ]),
 ]
