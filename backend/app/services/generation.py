@@ -120,7 +120,7 @@ async def _stream_azure_v1(user_turn: str, model: str | None = None) -> AsyncGen
     needed). Uses the standard OpenAI chat-completions wire format, which
     Azure's v1 API also supports for non-OpenAI models like DeepSeek.
     AZURE_OPENAI_ENDPOINT should be just the host, e.g.
-    https://ai-training-msftfoundry.services.ai.azure.com — this function
+    https://<your-resource>.services.ai.azure.com — this function
     appends /openai/v1/chat/completions itself.
 
     `model` lets a caller target a different deployment on this same

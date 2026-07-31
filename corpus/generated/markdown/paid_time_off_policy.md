@@ -2,15 +2,17 @@
 
 ## Accrual
 
-Full-time employees accrue 1.5 days of paid time off (PTO) per month, for a total of 18 days per year. Accrual is calculated on the last day of each calendar month and posted to the employee's PTO balance within 3 business days. For example, an employee who starts on March 10th accrues a prorated 0.55 days for March (21 remaining days in the month divided by 31, multiplied by 1.5), then accrues the full 1.5 days starting in April.
+Full-time employees accrue paid time off (PTO) on a tenure-based schedule, posted every bi-weekly pay period: 0-2 years of service accrue at 15 days per year (approximately 1.25 days per month); 3-5 years accrue at 20 days per year (approximately 1.67 days per month); 6-10 years accrue at 25 days per year (approximately 2.08 days per month); 11+ years accrue at 30 days per year (approximately 2.5 days per month). PTO actually posts bi-weekly, not monthly — the monthly figures above are convenient approximate conversions, not the literal accrual schedule.
 
-Part-time employees accrue PTO on a pro-rated basis according to scheduled hours: an employee scheduled for 20 hours per week (50% of full-time) accrues 0.75 days per month, and an employee scheduled for 30 hours per week (75% of full-time) accrues 1.125 days per month. Scheduled hours are reviewed quarterly, and an employee's accrual rate is adjusted going forward (not retroactively) if their scheduled hours change.
+An employee's accrual rate increases automatically starting with the first full pay period following their service-anniversary date. The higher rate applies prospectively only; it is not applied retroactively to PTO already accrued earlier that same year.
 
-PTO accrual begins on an employee's first day of employment; there is no waiting period. However, newly accrued PTO cannot be used until an employee has completed 30 days of employment, except in the case of a documented medical emergency, in which case HR may approve early use of accrued-but-unvested PTO on a case-by-case basis.
+Part-time employees accrue PTO on a pro-rated basis against whichever tenure tier would apply to them if full-time: an employee scheduled for 20 hours per week (50% of full-time) at the 0-2 year tier accrues 7.5 days per year, and the same employee at the 11+ year tier would accrue 15 days per year. Scheduled hours are reviewed quarterly, and an employee's accrual rate is adjusted going forward (not retroactively) if their scheduled hours change.
 
-Employees returning from an unpaid leave of absence resume accrual on their return-to-work date; PTO does not accrue during the unpaid portion of a leave, but does continue to accrue during any paid portion (for example, the paid weeks of parental leave described in the Parental Leave Policy).
+PTO accrual begins on an employee's first day of employment at the 0-2 year tier; there is no waiting period to begin accruing. However, newly accrued PTO cannot be used until an employee has completed 30 days of employment, except in the case of a documented medical emergency, in which case HR may approve early use of accrued-but-unvested PTO on a case-by-case basis.
 
-Employees who transfer internally between departments keep their existing PTO balance and accrual rate unchanged; a transfer is not treated as a new hire date for accrual purposes, since accrual is tied to total continuous Contoso Corp tenure, not tenure in any specific role or department.
+Employees returning from an unpaid leave of absence resume accrual, at their existing tier, on their return-to-work date; PTO does not accrue during the unpaid portion of a leave, but does continue to accrue during any paid portion (for example, the paid weeks of parental leave described in the Parental Leave Policy).
+
+Employees who transfer internally between departments keep their existing PTO balance, tenure tier, and accrual rate unchanged; a transfer is not treated as a new hire date for accrual purposes, since both tenure and accrual are tied to total continuous Contoso Corp service, not tenure in any specific role or department.
 
 ## Rollover
 

@@ -1,8 +1,8 @@
-import { RefreshCw, Trash2, Upload } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { RefreshCw } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import UsageAnalytics from "../components/UsageAnalytics";
-import { deleteDocument, listDocuments, reindexAll, uploadDocument } from "../lib/api";
+import { listDocuments, reindexAll } from "../lib/api";
 
 const STATUS_PILL = {
   indexed: "pill-success",
@@ -15,7 +15,6 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [busyId, setBusyId] = useState(null);
   const [error, setError] = useState(null);
-  const fileInputRef = useRef(null);
 
   async function refresh() {
     setLoading(true);
@@ -33,38 +32,10 @@ export default function AdminPage() {
     refresh();
   }, []);
 
-  async function handleUpload(e) {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setBusyId("upload");
-    try {
-      await uploadDocument(file);
-      await refresh();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setBusyId(null);
-      e.target.value = "";
-    }
-  }
-
   async function handleReindexAll() {
     setBusyId("all");
     try {
       await reindexAll();
-      await refresh();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setBusyId(null);
-    }
-  }
-
-  async function handleDelete(id) {
-    if (!confirm("Remove this document and its indexed chunks?")) return;
-    setBusyId(id);
-    try {
-      await deleteDocument(id);
       await refresh();
     } catch (err) {
       setError(err.message);
@@ -87,7 +58,7 @@ export default function AdminPage() {
         }}
       >
         <div>
-          <h1 style={{ fontSize: 20, fontWeight: 700 }}>Knowledge base</h1>
+          <h1 style={{ fontSize: 20, fontWeight: 700 }}>Admin</h1>
           <p style={{ margin: "4px 0 0", fontSize: 13.5, color: "var(--text-secondary)" }}>
             {documents.length} documents · {totalChunks} indexed chunks
           </p>
@@ -97,11 +68,6 @@ export default function AdminPage() {
             <RefreshCw size={15} strokeWidth={2} className={busyId === "all" ? "spin" : ""} />
             Re-index all
           </button>
-          <button className="btn btn-primary" onClick={() => fileInputRef.current?.click()} disabled={busyId === "upload"}>
-            <Upload size={15} strokeWidth={2} />
-            {busyId === "upload" ? "Uploading…" : "Upload document"}
-          </button>
-          <input ref={fileInputRef} type="file" hidden accept=".pdf,.docx,.html,.htm,.md" onChange={handleUpload} />
         </div>
       </header>
 
@@ -117,9 +83,7 @@ export default function AdminPage() {
         {loading ? (
           <div className="empty-state">Loading documents…</div>
         ) : documents.length === 0 ? (
-          <div className="empty-state">
-            No documents indexed yet. Upload a PDF, DOCX, HTML, or Markdown file for your teams to query.
-          </div>
+          <div className="empty-state">No documents indexed yet.</div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {documents.map((doc) => (
@@ -134,17 +98,7 @@ export default function AdminPage() {
                     {doc.filename} · {doc.source_format.toUpperCase()} · {doc.chunk_count} chunks
                   </div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <span className={`pill ${STATUS_PILL[doc.status] ?? "pill-neutral"}`}>{doc.status}</span>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => handleDelete(doc.id)}
-                    disabled={busyId === doc.id}
-                    title="Delete this document"
-                  >
-                    <Trash2 size={14} strokeWidth={2} />
-                  </button>
-                </div>
+                <span className={`pill ${STATUS_PILL[doc.status] ?? "pill-neutral"}`}>{doc.status}</span>
               </div>
             ))}
           </div>

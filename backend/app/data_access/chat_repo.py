@@ -15,6 +15,18 @@ def get_or_create_conversation(db: Session, conversation_id: str | None) -> Conv
     return convo
 
 
+def list_conversations(db: Session, limit: int = 50) -> list[Conversation]:
+    stmt = select(Conversation).order_by(Conversation.created_at.desc()).limit(limit)
+    return list(db.scalars(stmt))
+
+
+def set_title_from_first_message(convo: Conversation, message: str) -> None:
+    if convo.title != "New conversation":
+        return
+    title = message.strip().splitlines()[0]
+    convo.title = title if len(title) <= 60 else title[:57] + "..."
+
+
 def add_message(
     db: Session,
     conversation_id: str,
@@ -84,6 +96,15 @@ def add_citations(db: Session, message_id: str, citations: list[dict]) -> None:
                 rank=c["rank"],
             )
         )
+
+
+def delete_conversation(db: Session, conversation_id: str) -> bool:
+    convo = db.get(Conversation, conversation_id)
+    if not convo:
+        return False
+    db.delete(convo)  # cascades to messages and citations
+    db.commit()
+    return True
 
 
 def get_conversation_with_messages(db: Session, conversation_id: str) -> Conversation | None:

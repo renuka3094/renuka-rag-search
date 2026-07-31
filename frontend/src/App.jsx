@@ -10,6 +10,7 @@ export default function App() {
       <Routes>
         <Route element={<LayoutShell />}>
           <Route index element={<ChatPage />} />
+          <Route path="c/:conversationId" element={<ChatPage />} />
           <Route path="admin" element={<AdminPage />} />
         </Route>
       </Routes>

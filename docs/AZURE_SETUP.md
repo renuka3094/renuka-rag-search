@@ -60,7 +60,7 @@ Configuration:
 
 ```
 VECTOR_BACKEND=azure
-AZURE_SEARCH_ENDPOINT=https://renu-embed-vector.search.windows.net
+AZURE_SEARCH_ENDPOINT=https://<your-search-service>.search.windows.net
 AZURE_SEARCH_API_KEY=<primary admin key>
 AZURE_SEARCH_INDEX_NAME=contoso-kb
 ```
@@ -96,7 +96,7 @@ reliably persist across restarts.
 Configuration:
 
 ```
-DATABASE_URL=postgresql+psycopg://<user>:<password>@renuka-rag-db.postgres.database.azure.com:5432/postgres?sslmode=require
+DATABASE_URL=postgresql+psycopg://<user>:<password>@<your-postgres-server>.postgres.database.azure.com:5432/postgres?sslmode=require
 ```
 
 Note the `+psycopg` scheme (Psycopg 3) rather than `+psycopg2` —

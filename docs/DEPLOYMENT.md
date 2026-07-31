@@ -21,26 +21,27 @@ configuration.
                     ▼                         ▼
         ┌──────────────────────┐   ┌───────────────────────────┐
         │ Azure Static Web App  │   │ Azure App Service (Linux) │
-        │ salmon-forest-03f4322 │──▶│ renuka-rag-backend        │
-        │ 10.7.azurestaticapps  │   │ Python 3.11, gunicorn +   │
-        │ .net                  │   │ uvicorn workers           │
+        │ (see App Service /    │──▶│ (see App Service /        │
+        │ Static Web App        │   │ Python 3.11, gunicorn +   │
+        │ resource in portal)   │   │ uvicorn workers           │
         └──────────────────────┘   └──────────┬────────────────┘
                                                 │
                         ┌───────────────────────┼───────────────────────┐
                         ▼                       ▼                       ▼
           ┌─────────────────────────┐ ┌──────────────────────┐ ┌──────────────────────┐
           │ Azure Database for      │ │ Azure AI Search        │ │ Azure AI Foundry      │
-          │ PostgreSQL Flexible     │ │ renu-embed-vector.     │ │ (shared project)      │
-          │ Server                  │ │ search.windows.net     │ │ azure_v1 endpoint     │
-          │ renuka-rag-db.postgres. │ │ index: contoso-kb      │ │ chat: gpt-5.5         │
-          │ database.azure.com     │ │ hybrid vector+keyword  │ │ embeddings:           │
+          │ PostgreSQL Flexible     │ │ (see resource in       │ │ (shared project)      │
+          │ Server                  │ │ portal)                │ │ azure_v1 endpoint     │
+          │ (see resource in       │ │ index: contoso-kb      │ │ chat: gpt-5.5         │
+          │ portal)                 │ │ hybrid vector+keyword  │ │ embeddings:           │
           └─────────────────────────┘ └──────────────────────┘ │ text-embedding-3-small│
                                                                  └──────────────────────┘
 ```
 
 **Live endpoints**
-- Frontend: `https://salmon-forest-03f432210.7.azurestaticapps.net`
-- Backend: `https://renuka-rag-backend-g6hugpa4bbg9f8bn.centralus-01.azurewebsites.net`
+- Frontend and backend URLs are available in the Azure Portal (Static Web
+  App / App Service overview pages) and in each GitHub Actions workflow
+  run, and are intentionally not published here.
 - Backend health check: `/api/v1/health`
 
 ## Source control

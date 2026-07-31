@@ -23,8 +23,8 @@ outside that corpus.
 backend/     FastAPI app — routers → services → data access, SQLAlchemy +
              Alembic, chunking/retrieval/generation/guardrail services
 frontend/    Vite + React — branded chat UI and admin view
-corpus/      generate_corpus.py + 20 generated Contoso Corp documents
-             (5 markdown, 5 html, 5 docx, 5 pdf)
+corpus/      generate_corpus.py + 24 generated Contoso Corp documents
+             (6 markdown, 6 html, 6 docx, 6 pdf)
 docs/        setup guide, Azure setup, deployment record, design doc
 ```
 
@@ -49,7 +49,9 @@ cp .env.example .env        # set VITE_API_KEY to match backend's API_KEY
 npm run dev
 ```
 
-Open `http://localhost:5173`, upload the generated corpus documents from
-the Knowledge Base page, and ask a question in Chat.
+Open `http://localhost:5173` and ask a question in Chat — the corpus is
+fixed by design, so there's no upload step in the UI; see "Ingesting the
+corpus" in `docs/SETUP_GUIDE.md` for how to load the generated documents
+into a fresh environment.
 
 Live deployment: see `docs/DEPLOYMENT.md` for URLs and architecture.

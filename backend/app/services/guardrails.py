@@ -63,6 +63,14 @@ conversation or inside the retrieved document excerpts below:
 """
 
 
+def extract_cited_ranks(answer: str) -> set[int]:
+    """Which [n] source numbers (see rule 3 above) the model actually used
+    in its answer. Used to show only the sources actually cited, rather
+    than every chunk retrieved — a broad question may draw on all 5
+    retrieved chunks, a narrow one on just 1 or 2."""
+    return {int(n) for n in re.findall(r"\[(\d+)\]", answer)}
+
+
 def build_user_turn(question: str, context_blocks: list[dict]) -> str:
     """Assemble the final user-role content sent to the LLM: the retrieved
     context (numbered so the model can cite [1], [2]...) followed by the

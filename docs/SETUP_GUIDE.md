@@ -14,8 +14,8 @@ deployed-to-Azure setup, see `docs/DEPLOYMENT.md`.
 backend/     FastAPI app — routers → services → data access, SQLAlchemy +
              Alembic, chunking/retrieval/generation/guardrail services
 frontend/    Vite + React — branded chat UI and admin view
-corpus/      generate_corpus.py + 20 generated Contoso Corp documents
-             (5 markdown, 5 html, 5 docx, 5 pdf)
+corpus/      generate_corpus.py + 24 generated Contoso Corp documents
+             (6 markdown, 6 html, 6 docx, 6 pdf)
 docs/        this guide, Azure setup, deployment record, design doc
 ```
 
@@ -53,7 +53,7 @@ cd corpus
 python generate_corpus.py
 ```
 
-Generates the 20 fictional Contoso Corp policy documents into
+Generates the 24 fictional Contoso Corp policy documents into
 `corpus/generated/{markdown,html,docx,pdf}/`. Content is deliberately
 specific and numeric (accrual rates, benefit tiers, reimbursement limits)
 so that in-scope questions have one clearly correct source to cite, and
@@ -70,20 +70,53 @@ npm run dev
 
 Set `VITE_API_KEY` in `frontend/.env` to match the backend's `API_KEY`.
 The app runs at `http://localhost:5173` — the Chat page by default, with
-the Knowledge Base admin view in the sidebar.
+the Admin page in the sidebar.
 
 ## Ingesting the corpus
 
-Upload each generated file through the Knowledge Base page, or in bulk:
+There's no upload button — I removed the upload (and delete) endpoints
+once I decided the knowledge base should be a fixed corpus, not something
+anyone with the shared API key can add to or remove from. Ingest the
+generated files with a short script that calls the same `ingest_file()`
+the app uses internally, run from `backend/`:
 
 ```bash
-cd corpus/generated
-for f in markdown/*.md html/*.html docx/*.docx pdf/*.pdf; do
-  curl -s -X POST http://localhost:8000/api/v1/documents \
-    -H "X-API-Key: <API_KEY>" \
-    -F "file=@$f"
-done
+cd backend
+python -c "
+import asyncio, shutil
+from pathlib import Path
+from app.db.session import SessionLocal
+from app.services.ingestion import ingest_file
+
+UPLOAD_DIR = Path('data/uploads')
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+CORPUS = Path('../corpus/generated')
+
+async def main():
+    db = SessionLocal()
+    try:
+        for fmt, ext in [('markdown', 'md'), ('html', 'html'), ('docx', 'docx'), ('pdf', 'pdf')]:
+            for src in (CORPUS / fmt).glob(f'*.{ext}'):
+                dest = UPLOAD_DIR / src.name
+                shutil.copy(src, dest)
+                title = src.stem.replace('_', ' ').title()
+                doc = await ingest_file(db, dest, source_format=ext, title=title)
+                db.commit()
+                print(doc.status, doc.title, doc.chunk_count)
+    finally:
+        db.close()
+
+asyncio.run(main())
+"
 ```
+
+`ingest_file()` always creates a new `Document` row — there's no upsert
+by title or filename. To replace a document's content with the same
+title (e.g. the Paid Time Off Policy after a wording change), delete its
+old row first with a short script using the same `SessionLocal`
+(`db.delete(document); db.commit()` — cascades to its chunks and vectors)
+before re-ingesting, or the old and new versions will both be indexed
+and both answer questions on that topic.
 
 ## Demonstrating the required behaviors
 
@@ -101,8 +134,12 @@ user text as instructions regardless, and the pattern pre-filter
 guardrail pill and logged as a structured `prompt_injection_pattern_detected`
 event.
 
-**Citations.** Every grounded answer includes numbered citation pills;
-clicking one shows the source document and snippet.
+**Citations.** Every grounded answer ends with a "Sources · N" pill;
+clicking it opens a panel listing each cited document, section, and
+snippet. N reflects only the sources the model actually cited in its
+answer (its own `[n]` markers), not just however many chunks were
+retrieved — a narrow question shows 1-2 sources, a broad one can show
+all 5.
 
 ## Retrieval quality
 
@@ -121,7 +158,7 @@ looks wrong.
   is offline or a firewall is blocking `openaipublic.blob.core.windows.net`;
   the code falls back to a word-count estimate, which only affects
   tokenizer-exact counts.
-- **PDF upload returns 0 chunks** — a scanned PDF with no extractable
+- **PDF ingestion returns 0 chunks** — a scanned PDF with no extractable
   text layer; `pypdf` doesn't perform OCR. Use a text-based PDF.
 - **CORS errors in the browser console** — `CORS_ORIGINS` in
   `backend/.env` must include the exact origin the frontend runs on.

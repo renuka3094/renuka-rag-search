@@ -12,6 +12,10 @@ body,
 
 body {
   margin: 0;
+  overflow: hidden; /* the app has its own two internal scroll regions
+                       (sidebar history, main chat) — the page itself
+                       should never scroll, or scrolling one would visibly
+                       drag the other along with it */
   font-family: var(--font-sans);
   background: var(--bg-canvas);
   color: var(--text-primary);
@@ -48,8 +52,16 @@ a {
 .sidebar {
   background: var(--bg-inset);
   border-right: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* fixed top nav, flexible scrollable
+                                         history list, fixed footer — the
+                                         explicit 1fr row (rather than a
+                                         flex:1 child) is what reliably
+                                         bounds the middle row so it scrolls
+                                         instead of pushing the sidebar past
+                                         the viewport height */
+  height: 100vh;
+  overflow: hidden;
   padding: 20px 14px;
 }
 
@@ -111,7 +123,9 @@ a {
 }
 
 .main-panel {
+  height: 100vh; /* see .sidebar comment above — same grid-row-sizing gotcha */
   overflow: hidden;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   background: var(--bg-canvas);
@@ -203,6 +217,9 @@ a {
 
 .scroll-region {
   overflow-y: auto;
+  min-height: 0; /* flex/grid children default to min-height:auto, which lets
+                    content overflow the container instead of scrolling
+                    inside it — this is what actually confines the scrollbar */
 }
 
 .scroll-region::-webkit-scrollbar {

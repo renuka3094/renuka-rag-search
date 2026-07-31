@@ -67,11 +67,12 @@ DOCS_MARKDOWN = [
     ]),
     ("Paid Time Off Policy", [
         ("Accrual", [
-            "Full-time employees accrue 1.5 days of paid time off (PTO) per month, for a total of 18 days per year. Accrual is calculated on the last day of each calendar month and posted to the employee's PTO balance within 3 business days. For example, an employee who starts on March 10th accrues a prorated 0.55 days for March (21 remaining days in the month divided by 31, multiplied by 1.5), then accrues the full 1.5 days starting in April.",
-            "Part-time employees accrue PTO on a pro-rated basis according to scheduled hours: an employee scheduled for 20 hours per week (50% of full-time) accrues 0.75 days per month, and an employee scheduled for 30 hours per week (75% of full-time) accrues 1.125 days per month. Scheduled hours are reviewed quarterly, and an employee's accrual rate is adjusted going forward (not retroactively) if their scheduled hours change.",
-            "PTO accrual begins on an employee's first day of employment; there is no waiting period. However, newly accrued PTO cannot be used until an employee has completed 30 days of employment, except in the case of a documented medical emergency, in which case HR may approve early use of accrued-but-unvested PTO on a case-by-case basis.",
-            "Employees returning from an unpaid leave of absence resume accrual on their return-to-work date; PTO does not accrue during the unpaid portion of a leave, but does continue to accrue during any paid portion (for example, the paid weeks of parental leave described in the Parental Leave Policy).",
-            "Employees who transfer internally between departments keep their existing PTO balance and accrual rate unchanged; a transfer is not treated as a new hire date for accrual purposes, since accrual is tied to total continuous Contoso Corp tenure, not tenure in any specific role or department.",
+            "Full-time employees accrue paid time off (PTO) on a tenure-based schedule, posted every bi-weekly pay period: 0-2 years of service accrue at 15 days per year (approximately 1.25 days per month); 3-5 years accrue at 20 days per year (approximately 1.67 days per month); 6-10 years accrue at 25 days per year (approximately 2.08 days per month); 11+ years accrue at 30 days per year (approximately 2.5 days per month). PTO actually posts bi-weekly, not monthly — the monthly figures above are convenient approximate conversions, not the literal accrual schedule.",
+            "An employee's accrual rate increases automatically starting with the first full pay period following their service-anniversary date. The higher rate applies prospectively only; it is not applied retroactively to PTO already accrued earlier that same year.",
+            "Part-time employees accrue PTO on a pro-rated basis against whichever tenure tier would apply to them if full-time: an employee scheduled for 20 hours per week (50% of full-time) at the 0-2 year tier accrues 7.5 days per year, and the same employee at the 11+ year tier would accrue 15 days per year. Scheduled hours are reviewed quarterly, and an employee's accrual rate is adjusted going forward (not retroactively) if their scheduled hours change.",
+            "PTO accrual begins on an employee's first day of employment at the 0-2 year tier; there is no waiting period to begin accruing. However, newly accrued PTO cannot be used until an employee has completed 30 days of employment, except in the case of a documented medical emergency, in which case HR may approve early use of accrued-but-unvested PTO on a case-by-case basis.",
+            "Employees returning from an unpaid leave of absence resume accrual, at their existing tier, on their return-to-work date; PTO does not accrue during the unpaid portion of a leave, but does continue to accrue during any paid portion (for example, the paid weeks of parental leave described in the Parental Leave Policy).",
+            "Employees who transfer internally between departments keep their existing PTO balance, tenure tier, and accrual rate unchanged; a transfer is not treated as a new hire date for accrual purposes, since both tenure and accrual are tied to total continuous Contoso Corp service, not tenure in any specific role or department.",
         ]),
         ("Rollover", [
             "Employees may roll over up to 5 unused PTO days into the following calendar year. Any balance above 5 days is forfeited on December 31st unless local law requires otherwise (for example, California and several other states prohibit use-it-or-lose-it PTO policies, and employees in those states carry over their full unused balance instead of being capped at 5 days).",
@@ -208,6 +209,40 @@ DOCS_MARKDOWN = [
         ]),
         ("Roles and Responsibilities", [
             "HR is responsible for confirming eligibility and processing leave paperwork. Payroll is responsible for ensuring leave is paid correctly and benefits contributions continue as described. Managers are responsible for planning coverage during an employee's leave without pressuring the employee about work while they are out.",
+        ]),
+    ]),
+    ("Conflict of Interest Policy", [
+        ("Purpose and Scope", [
+            "This policy helps employees identify and disclose situations where their personal interests could conflict, or appear to conflict, with Contoso Corp's interests. It applies to all full-time and part-time employees, and to contractors and vendors performing work that gives them access to confidential company information, though contractor obligations are also governed by their individual service agreements.",
+            "A conflict of interest does not need to involve actual wrongdoing to require disclosure — the appearance of a conflict, if left undisclosed, can damage trust just as much as an actual one, so this policy asks employees to err toward disclosure whenever they are uncertain.",
+        ]),
+        ("What Counts as a Conflict", [
+            "Common examples include: having a financial stake in a company that does business with Contoso Corp, supervising a family member or romantic partner, accepting a board seat or advisory role at a competitor, or steering a Contoso Corp contract to a business owned by a friend or relative. This list is illustrative, not exhaustive; if a situation feels like it could be perceived as a conflict, it should be disclosed.",
+        ]),
+        ("Outside Employment", [
+            "Employees may hold outside employment or freelance work as long as it does not compete with Contoso Corp's business, does not use Contoso Corp's time, equipment, or confidential information, and does not create a scheduling conflict with core job responsibilities. Outside employment with a direct competitor requires written approval from HR and the employee's department head before it begins, not after the fact.",
+        ]),
+        ("Gifts and Entertainment", [
+            "Employees may accept gifts from vendors or partners worth up to $100 per year, per relationship, without disclosure. Gifts above that threshold, or any cash or cash-equivalent gift regardless of amount, must be disclosed to a manager and, in most cases, declined or turned over to Contoso Corp. Reasonable business meals and standard industry-conference attendance paid by a vendor are not treated as gifts under this policy.",
+        ]),
+        ("Financial Interests", [
+            "An ownership stake of more than 5% in a company that is a current or prospective Contoso Corp vendor, customer, or competitor must be disclosed, regardless of the employee's role. Ownership below 5% in a publicly traded company (for example, through a mutual fund or index fund) does not require disclosure, since the employee has no meaningful influence over that company's decisions.",
+        ]),
+        ("Family and Personal Relationships", [
+            "An employee may not directly supervise, or participate in hiring, promotion, or compensation decisions for, a family member or someone with whom they have a close personal or romantic relationship. If such a relationship forms after both people are already employed at Contoso Corp, HR will work with both employees' managers to adjust reporting lines so the conflict is resolved, typically within 30 days of disclosure.",
+        ]),
+        ("Disclosure Process", [
+            "Disclose a potential conflict using the Conflict of Interest Disclosure Form, available on the HR portal, as soon as the employee becomes aware of it — proactive disclosure, even of something that turns out not to be a real conflict, is never treated as a policy violation. HR reviews each disclosure and, where needed, works with the employee's manager on a management plan (for example, recusal from a specific vendor decision).",
+        ]),
+        ("Consequences of Non-Disclosure", [
+            "Failing to disclose a known conflict of interest is treated more seriously than the underlying conflict itself in most cases, since it is the concealment — not the conflict — that most directly damages trust. Consequences range from a documented warning to termination, depending on the severity of the conflict and any resulting harm to Contoso Corp.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Do I need to disclose my spouse's job at another company? Only if that company is a current or prospective Contoso Corp vendor, customer, or competitor, or if your spouse's role could give them access to Contoso Corp's confidential information through you.",
+            "What if I'm not sure whether something is a conflict? Disclose it anyway. HR would rather review ten disclosures that turn out to be non-issues than have one real conflict go unreported.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Employees are responsible for identifying and promptly disclosing potential conflicts. Managers are responsible for escalating any conflict they become aware of to HR, even if the employee has not yet disclosed it themselves. HR reviews disclosures, determines whether a management plan is needed, and maintains the confidential Conflict of Interest Register.",
         ]),
     ]),
 ]
@@ -361,6 +396,35 @@ DOCS_HTML = [
             "HR and Payroll administer enrollment, contribution elections, and auto-enrollment defaults. The plan's third-party recordkeeper administers individual account access, investment elections, loans, and withdrawals directly; Contoso Corp itself does not have access to make changes to an individual employee's account.",
         ]),
     ]),
+    ("Overtime and Timekeeping Policy", [
+        ("Exempt vs Non-Exempt Classification", [
+            "Every Contoso Corp role is classified as either exempt or non-exempt under the Fair Labor Standards Act (or the equivalent local law outside the United States). Non-exempt employees are eligible for overtime pay; exempt employees are not, regardless of hours worked, because their role meets the applicable duties and salary tests for exemption. An employee's classification is listed on their offer letter and in the HR system, and does not change without a formal role reclassification reviewed by HR and Legal.",
+        ]),
+        ("Recording Work Time", [
+            "Non-exempt employees must record all hours worked, including any work performed outside scheduled hours (for example, answering an urgent email at night), using the Contoso Corp timekeeping system. Time must be recorded daily, not reconstructed at the end of the week from memory, since accurate same-day recording is what makes overtime calculations reliable.",
+            "Exempt employees are not required to record hours for pay purposes, but are still expected to record PTO usage in the timekeeping system so accrual balances stay accurate.",
+        ]),
+        ("Overtime Calculation", [
+            "Non-exempt employees are paid 1.5 times their regular hourly rate for hours worked beyond 40 in a single work week (Sunday through Saturday). Overtime is calculated on a weekly basis, not averaged across a pay period — working 30 hours one week and 50 the next results in 10 hours of overtime for the second week, even though the two-week average is 40.",
+            "Some states require daily overtime (for example, after 8 hours in a single day) in addition to weekly overtime; employees in those states are paid whichever calculation results in a higher amount for any given pay period.",
+        ]),
+        ("Meal and Rest Breaks", [
+            "Non-exempt employees working a shift of 6 hours or longer are entitled to an unpaid 30-minute meal break, and a paid 10-minute rest break for every 4 hours worked, consistent with the strictest applicable state requirement. Meal breaks must be recorded as unpaid time in the timekeeping system; skipping a legally required break does not entitle the employee to extra pay unless required by state law, but it should still be reported to a manager so the underlying scheduling issue can be fixed.",
+        ]),
+        ("Remote Work Timekeeping", [
+            "Remote non-exempt employees follow the same timekeeping requirements as in-office employees, recording actual hours worked rather than simply logging a full 8 hours by default. Working from home does not exempt an employee from meal and rest break requirements, even though there is no physical time clock to enforce them.",
+        ]),
+        ("Approval for Overtime", [
+            "Non-exempt employees must get manager approval before working overtime hours whenever reasonably possible; unapproved overtime is still paid in full, as required by law, but working overtime without approval on a repeated basis may result in a coaching conversation about workload planning, separate from the pay itself.",
+        ]),
+        ("Frequently Asked Questions", [
+            "If I work through my lunch break to finish something urgent, do I get paid for it? Yes — if you actually work during a scheduled meal break, that time must be recorded as worked time and paid accordingly; the break is only unpaid if it is genuinely uninterrupted.",
+            "Can my manager ask me to skip recording overtime to keep the team's hours down? No. Any manager who suggests under-recording hours worked is committing a serious policy violation and should be reported to HR immediately; this applies regardless of the manager's intent.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Employees are responsible for accurately and promptly recording hours worked. Managers are responsible for reviewing and approving timesheets weekly and for planning workload to minimize unplanned overtime. Payroll calculates overtime pay according to the applicable federal and state formulas and flags any timesheet with unapproved overtime for manager follow-up, though it still pays the employee in full regardless of approval status.",
+        ]),
+    ]),
 ]
 
 DOCS_DOCX = [
@@ -486,6 +550,33 @@ DOCS_DOCX = [
         ]),
         ("Key Definitions", [
             "'Confidential data' means data classified as such under the three-tier system described above (Public, Internal, Confidential). A 'data processing agreement' is a signed contract with a vendor governing how they may handle Confidential data shared with them, required before any such sharing occurs.",
+        ]),
+    ]),
+    ("Compensation and Pay Review Policy", [
+        ("Pay Structure and Bands", [
+            "Every role at Contoso Corp is assigned to a pay band based on job level, function, and geographic market, maintained by the Total Rewards team and benchmarked annually against external compensation survey data. An employee's current pay band and their position within it (as a percentage of the band's midpoint) are available to them on request from HR, though the full band structure for other roles is not published company-wide.",
+        ]),
+        ("Annual Compensation Review", [
+            "Contoso Corp conducts a company-wide compensation review each year in March, considering individual performance, position within the pay band, and updated market benchmark data. Any resulting pay changes take effect on the following April 1st pay cycle. An employee hired after January 1st of the review year is not eligible for that year's annual review and instead receives their next review the following March.",
+        ]),
+        ("Merit Increases", [
+            "Merit increases are based on the employee's most recent performance review rating, described in the Performance Review Process policy, and on how far below the pay band midpoint the employee currently sits — an employee below the midpoint with a strong rating typically receives a larger increase than an employee already above the midpoint with the same rating, since the goal is to move performers toward market-appropriate pay over time, not simply reward the rating alone.",
+        ]),
+        ("Promotion-Related Pay Changes", [
+            "An employee promoted to a role in a higher pay band receives a pay increase at the time of promotion sufficient to bring them at least to the new band's minimum, applied on the pay cycle following the promotion's effective date. Promotion increases are calculated separately from, and are not reduced by, any merit increase the employee received earlier in the same calendar year.",
+        ]),
+        ("Pay Transparency", [
+            "Contoso Corp discloses the pay range for a role in every internal and external job posting, consistent with pay transparency laws in an increasing number of states. Employees may discuss their own pay with colleagues if they choose; Contoso Corp does not prohibit, and will not retaliate against, employees discussing compensation, consistent with federal labor law.",
+        ]),
+        ("Off-Cycle Adjustments", [
+            "Pay adjustments outside the annual March review cycle are limited to promotions, documented retention concerns (for example, a competing external offer), or correcting a pay band error identified by Total Rewards. Off-cycle adjustments require approval from the employee's department head and a Total Rewards partner, and are documented with the specific business reason on file.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Can I ask what the pay band midpoint is for my role? Yes — contact HR or your Total Rewards partner, who can share your specific band and where you currently sit within it.",
+            "If I get a strong performance rating but I'm already above my band's midpoint, will I still get an increase? Possibly a smaller one than someone below midpoint with the same rating, or a one-time bonus instead of a base increase, since base pay increases are weighted toward moving employees toward market-appropriate pay over time.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Total Rewards maintains pay bands, runs annual market benchmarking, and reviews all off-cycle adjustment requests. Managers recommend merit increases based on performance and provide the business justification for any off-cycle request. HR communicates final pay decisions to employees and answers questions about how the review process works.",
         ]),
     ]),
 ]
@@ -665,6 +756,33 @@ DOCS_PDF = [
         ]),
         ("Relationship to Short-Term Disability", [
             "The EAP is not a substitute for short-term disability coverage, which provides income replacement during an extended medical leave including for a mental health condition; an employee whose counseling needs extend beyond what the EAP's 6 free sessions can address should discuss short-term disability and continued treatment options with HR, who can explain how the two benefits work together.",
+        ]),
+    ]),
+    ("Whistleblower and Ethics Reporting Policy", [
+        ("Purpose", [
+            "This policy gives every Contoso Corp employee a clear, safe way to report suspected illegal activity, fraud, or serious ethical violations, and confirms that Contoso Corp will not tolerate retaliation against anyone who reports in good faith. A report does not need to turn out to be correct to be made in good faith — good faith means the employee honestly believed the concern was legitimate at the time they raised it, not that the concern is later proven true.",
+        ]),
+        ("What to Report", [
+            "Report concerns involving financial fraud or accounting irregularities, bribery or corruption, safety violations, discrimination or harassment not already resolved through normal HR channels, misuse of company funds or assets, or any activity the employee believes violates the law or Contoso Corp's Code of Conduct. Ordinary workplace disagreements or dissatisfaction with a business decision are not whistleblower matters and should go through a manager or HR business partner instead.",
+        ]),
+        ("How to Report", [
+            "Reports can be made to a manager, HR, Legal, or directly through the Contoso Ethics Hotline at 1-800-555-0142, available 24/7 and operated by an independent third party, not by Contoso Corp staff. Employees may also submit a report through the Ethics Hotline's web portal, which supports secure two-way follow-up messaging with the investigator without revealing the reporter's identity.",
+        ]),
+        ("Anonymous Reporting Option", [
+            "Reports may be submitted anonymously through the Ethics Hotline; the independent third-party operator does not collect or pass along identifying information unless the reporter chooses to provide it. Anonymous reports are investigated with the same seriousness as identified reports, though an anonymous reporter cannot always be contacted for follow-up clarifying questions, which can occasionally limit how thoroughly a vague anonymous report can be investigated.",
+        ]),
+        ("Non-Retaliation Protection", [
+            "Contoso Corp strictly prohibits retaliation against anyone who reports a concern in good faith or participates in an investigation, including firing, demotion, pay reduction, negative performance reviews issued because of the report, or exclusion from meetings and opportunities. An employee who believes they have experienced retaliation should report it immediately through the same Ethics Hotline channels; retaliation complaints are investigated independently of, and with the same urgency as, the original underlying report.",
+        ]),
+        ("Investigation Process", [
+            "Legal or an independent investigator (for reports involving senior leadership) reviews each report, determines its scope, and completes most investigations within 45 business days, though complex financial or legal matters may take longer. The reporter, if identified, receives a general update on whether the investigation is complete, but detailed findings are shared only on a need-to-know basis to protect the privacy of everyone involved, including any employee who was the subject of the report.",
+        ]),
+        ("Frequently Asked Questions", [
+            "Will I get in trouble if my report turns out to be unfounded? No, as long as the report was made in good faith. Only reports made maliciously, or with knowledge that the claim was false, can result in consequences for the reporter.",
+            "Can I report a concern about my own manager? Yes — reports about a direct manager go through the same Ethics Hotline and are handled by Legal or HR, never by the manager being reported on, and never routed back through that manager for awareness before the investigation begins.",
+        ]),
+        ("Roles and Responsibilities", [
+            "Employees are responsible for reporting suspected violations in good faith through any of the channels described above. Legal owns the investigation process for reports involving fraud, legal violations, or senior leadership. HR investigates reports primarily involving workplace conduct. The independent Ethics Hotline operator maintains reporter confidentiality and anonymity where requested.",
         ]),
     ]),
 ]

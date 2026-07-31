@@ -24,17 +24,6 @@ export async function listDocuments() {
   return handleJson(res);
 }
 
-export async function uploadDocument(file) {
-  const form = new FormData();
-  form.append("file", file);
-  const res = await fetch(`${API_BASE}/api/v1/documents`, {
-    method: "POST",
-    headers: headers(),
-    body: form,
-  });
-  return handleJson(res);
-}
-
 export async function reindexDocument(id) {
   const res = await fetch(`${API_BASE}/api/v1/documents/${id}/reindex`, {
     method: "POST",
@@ -51,16 +40,21 @@ export async function reindexAll() {
   return handleJson(res);
 }
 
-export async function deleteDocument(id) {
-  const res = await fetch(`${API_BASE}/api/v1/documents/${id}`, {
-    method: "DELETE",
-    headers: headers(),
-  });
+export async function listConversations() {
+  const res = await fetch(`${API_BASE}/api/v1/chat/conversations`, { headers: headers() });
   return handleJson(res);
 }
 
 export async function getConversation(id) {
   const res = await fetch(`${API_BASE}/api/v1/chat/conversations/${id}`, { headers: headers() });
+  return handleJson(res);
+}
+
+export async function deleteConversation(id) {
+  const res = await fetch(`${API_BASE}/api/v1/chat/conversations/${id}`, {
+    method: "DELETE",
+    headers: headers(),
+  });
   return handleJson(res);
 }
 

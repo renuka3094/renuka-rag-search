@@ -1,10 +1,11 @@
 import { ChevronDown, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import ChatInput from "../components/ChatInput";
 import MessageBubble from "../components/MessageBubble";
 import SourcesPanel from "../components/SourcesPanel";
-import { streamChat } from "../lib/api";
+import { getConversation, streamChat } from "../lib/api";
 
 // Providers this deployment is actually wired to try (see
 // backend/app/services/generation.py). Both options are reached through
@@ -12,12 +13,21 @@ import { streamChat } from "../lib/api";
 // deployment names — satisfying the "compare at least two options for
 // generation" requirement live in the product, not only in the design doc.
 const MODEL_OPTIONS = [
-  { id: "azure_v1", label: "GPT-5.5 (Azure)" },
-  { id: "azure_deepseek", label: "DeepSeek-V3.2 (Azure)" },
+  { id: "azure_v1", label: "GPT-5.5" },
+  { id: "azure_deepseek", label: "DeepSeek-V3.2" },
+];
+
+const SUGGESTED_QUESTIONS = [
+  "How many PTO days do employees accrue per month?",
+  "How many days per week can employees work remotely?",
+  "What benefits and perks are offered?",
 ];
 
 export default function ChatPage() {
-  const [conversationId, setConversationId] = useState(null);
+  const { conversationId: routeConversationId } = useParams();
+  const navigate = useNavigate();
+
+  const [conversationId, setConversationId] = useState(routeConversationId ?? null);
   const [messages, setMessages] = useState([]);
   const [streaming, setStreaming] = useState(false);
   const [activeSources, setActiveSources] = useState(null);
@@ -27,6 +37,35 @@ export default function ChatPage() {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
+
+  // Sync with the URL: clicking a past chat in the sidebar (or "New chat")
+  // changes the route param, which is the source of truth for which
+  // conversation is loaded.
+  useEffect(() => {
+    if (!routeConversationId) {
+      setConversationId(null);
+      setMessages([]);
+      return;
+    }
+    if (routeConversationId === conversationId && messages.length > 0) return;
+
+    setConversationId(routeConversationId);
+    getConversation(routeConversationId)
+      .then((data) => {
+        setMessages(
+          data.messages.map((m) => ({
+            id: m.id,
+            role: m.role,
+            content: m.content,
+            refused: m.refused,
+            model: m.model,
+            citations: m.citations,
+          }))
+        );
+      })
+      .catch(() => setMessages([]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [routeConversationId]);
 
   async function handleSend(text) {
     const userMessage = { id: `local-${Date.now()}`, role: "user", content: text, citations: [] };
@@ -48,6 +87,9 @@ export default function ChatPage() {
           setMessages((prev) => updateDraft(prev, (m) => ({ ...m, content: `Error: ${event.message}` })));
         } else if (event.type === "done") {
           setConversationId(event.conversation_id);
+          if (routeConversationId !== event.conversation_id) {
+            navigate(`/c/${event.conversation_id}`, { replace: true });
+          }
           setMessages((prev) =>
             updateDraft(prev, (m) => ({
               ...m,
@@ -91,6 +133,11 @@ export default function ChatPage() {
         </div>
 
         <div style={{ position: "relative", flexShrink: 0 }}>
+          <Sparkles
+            size={14}
+            strokeWidth={2}
+            style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "var(--color-orange)" }}
+          />
           <select
             value={provider}
             onChange={(e) => setProvider(e.target.value)}
@@ -102,7 +149,7 @@ export default function ChatPage() {
               color: "var(--text-primary)",
               border: "1px solid var(--border-strong)",
               borderRadius: "var(--radius-button)",
-              padding: "8px 30px 8px 12px",
+              padding: "8px 30px 8px 30px",
               fontSize: 13.5,
               fontWeight: 600,
               cursor: "pointer",
@@ -125,11 +172,37 @@ export default function ChatPage() {
       <div ref={scrollRef} className="scroll-region" style={{ flex: 1, padding: "16px 24px" }}>
         {messages.length === 0 && (
           <div className="empty-state" style={{ height: "100%" }}>
-            <Sparkles size={22} strokeWidth={1.5} />
-            <div style={{ fontWeight: 600, color: "var(--text-primary)" }}>Ask your teams' first question</div>
-            <div style={{ maxWidth: 380 }}>
-              Try: "How many PTO days do employees accrue per month?" or something out of scope like
-              "What's the weather today?" to see the refusal behavior.
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                borderRadius: 16,
+                background: "var(--brand-gradient)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: 6,
+              }}
+            >
+              <Sparkles size={28} strokeWidth={2} color="var(--text-on-gradient)" />
+            </div>
+            <div style={{ fontWeight: 700, fontSize: 21, color: "var(--text-primary)" }}>
+              Ask the Knowledge Assistant
+            </div>
+            <div style={{ maxWidth: 420, marginBottom: 6 }}>
+              Answers are grounded only in indexed Contoso policy documents — never general knowledge.
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", maxWidth: 480 }}>
+              {SUGGESTED_QUESTIONS.map((q) => (
+                <button
+                  key={q}
+                  className="pill pill-neutral"
+                  style={{ cursor: "pointer", border: "1px solid var(--border-subtle)", padding: "7px 14px" }}
+                  onClick={() => handleSend(q)}
+                >
+                  {q}
+                </button>
+              ))}
             </div>
           </div>
         )}
