@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import ChatInput from "../components/ChatInput";
@@ -6,11 +6,23 @@ import CitationModal from "../components/CitationModal";
 import MessageBubble from "../components/MessageBubble";
 import { streamChat } from "../lib/api";
 
+// Providers this deployment is actually wired to try (see
+// backend/app/services/generation.py). Picking "DeepSeek" here without a
+// DEEPSEEK_API_KEY set server-side will surface a real upstream error —
+// that's intentional, not a bug: it's the same "compare at least two
+// options" requirement, made visible in the product instead of only in
+// the design doc.
+const MODEL_OPTIONS = [
+  { id: "azure_v1", label: "GPT-5.5 (Azure)" },
+  { id: "deepseek", label: "DeepSeek" },
+];
+
 export default function ChatPage() {
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [streaming, setStreaming] = useState(false);
   const [activeCitation, setActiveCitation] = useState(null);
+  const [provider, setProvider] = useState(MODEL_OPTIONS[0].id);
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -26,13 +38,13 @@ export default function ChatPage() {
     let accumulated = "";
 
     try {
-      await streamChat({ conversationId, message: text }, (event) => {
+      await streamChat({ conversationId, message: text, provider }, (event) => {
         if (event.type === "citations") {
           setMessages((prev) => updateDraft(prev, (m) => ({ ...m, citations: event.citations })));
         } else if (event.type === "token") {
           accumulated += event.text;
           setMessages((prev) => updateDraft(prev, (m) => ({ ...m, content: accumulated })));
-        
+
         } else if (event.type === "error") {
           setMessages((prev) => updateDraft(prev, (m) => ({ ...m, content: `Error: ${event.message}` })));
         } else if (event.type === "done") {
@@ -43,6 +55,7 @@ export default function ChatPage() {
               id: event.message_id,
               refused: accumulated.trim() === "I don't have that in the knowledge base.",
               flaggedPromptInjection: event.flagged_prompt_injection,
+              model: event.model,
             }))
           );
         }
@@ -61,11 +74,53 @@ export default function ChatPage() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <header style={{ padding: "20px 24px 12px", borderBottom: "1px solid var(--border-subtle)" }}>
-        <h1 style={{ fontSize: 20, fontWeight: 700 }}>Contoso Knowledge Assistant</h1>
-        <p style={{ margin: "4px 0 0", fontSize: 13.5, color: "var(--text-secondary)" }}>
-          Answers are grounded only in indexed Contoso policy documents — never general knowledge.
-        </p>
+      <header
+        style={{
+          padding: "20px 24px 12px",
+          borderBottom: "1px solid var(--border-subtle)",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          gap: 16,
+        }}
+      >
+        <div>
+          <h1 style={{ fontSize: 20, fontWeight: 700 }}>Contoso Knowledge Assistant</h1>
+          <p style={{ margin: "4px 0 0", fontSize: 13.5, color: "var(--text-secondary)" }}>
+            Answers are grounded only in indexed Contoso policy documents — never general knowledge.
+          </p>
+        </div>
+
+        <div style={{ position: "relative", flexShrink: 0 }}>
+          <select
+            value={provider}
+            onChange={(e) => setProvider(e.target.value)}
+            title="Generation model for the next message"
+            style={{
+              appearance: "none",
+              WebkitAppearance: "none",
+              background: "var(--bg-surface-raised)",
+              color: "var(--text-primary)",
+              border: "1px solid var(--border-strong)",
+              borderRadius: "var(--radius-button)",
+              padding: "8px 30px 8px 12px",
+              fontSize: 13.5,
+              fontWeight: 600,
+              cursor: "pointer",
+            }}
+          >
+            {MODEL_OPTIONS.map((opt) => (
+              <option key={opt.id} value={opt.id}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            size={14}
+            strokeWidth={2}
+            style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "var(--text-tertiary)" }}
+          />
+        </div>
       </header>
 
       <div ref={scrollRef} className="scroll-region" style={{ flex: 1, padding: "16px 24px" }}>

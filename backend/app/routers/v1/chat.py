@@ -22,13 +22,15 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from starlette.responses import StreamingResponse
 
+from app.core.config import get_settings
 from app.core.errors import NotFoundError
 from app.core.logging import get_logger
 from app.core.security import require_api_key
 from app.data_access import chat_repo
 from app.db.session import SessionLocal, get_db
-from app.schemas.chat import ChatRequest, ConversationHistoryOut
+from app.schemas.chat import ChatRequest, ConversationHistoryOut, UsageAnalyticsOut
 from app.services import generation, retrieval
+from app.services.chunking import _token_len
 from app.services.guardrails import build_user_turn, detect_injection_attempt
 from app.services.retrieval import REFUSAL_TEXT
 
@@ -94,10 +96,11 @@ async def chat_stream(payload: ChatRequest, db: Session = Depends(get_db)):
                 for c in chunks
             ]
             user_turn = build_user_turn(payload.message, context_blocks)
+            model_name = generation.resolve_model_name(payload.provider or get_settings().generation_provider)
 
             full_answer = []
             try:
-                async for token in generation.stream_answer(user_turn):
+                async for token in generation.stream_answer(user_turn, provider=payload.provider):
                     full_answer.append(token)
                     yield sse({"type": "token", "text": token})
             except Exception as e:  # noqa: BLE001
@@ -106,7 +109,15 @@ async def chat_stream(payload: ChatRequest, db: Session = Depends(get_db)):
                 return
 
             answer_text = "".join(full_answer).strip() or REFUSAL_TEXT
-            msg = chat_repo.add_message(stream_db, conversation_id, role="assistant", content=answer_text)
+            msg = chat_repo.add_message(
+                stream_db,
+                conversation_id,
+                role="assistant",
+                content=answer_text,
+                model=model_name,
+                prompt_tokens=_token_len(user_turn),
+                completion_tokens=_token_len(answer_text),
+            )
             chat_repo.add_citations(stream_db, msg.id, citations_payload)
             stream_db.commit()
 
@@ -115,11 +126,17 @@ async def chat_stream(payload: ChatRequest, db: Session = Depends(get_db)):
                 "conversation_id": conversation_id,
                 "message_id": msg.id,
                 "flagged_prompt_injection": flagged,
+                "model": model_name,
             })
         finally:
             stream_db.close()
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
+
+
+@router.get("/analytics", response_model=UsageAnalyticsOut)
+def get_usage_analytics(db: Session = Depends(get_db)):
+    return chat_repo.get_usage_stats(db)
 
 
 @router.get("/conversations/{conversation_id}", response_model=ConversationHistoryOut)

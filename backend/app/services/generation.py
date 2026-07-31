@@ -36,9 +36,24 @@ from app.core.errors import UpstreamProviderError
 from app.services.guardrails import SYSTEM_PROMPT
 
 
-async def stream_answer(user_turn: str) -> AsyncGenerator[str, None]:
+def resolve_model_name(provider: str) -> str:
+    """Display name for the model actually answering a given message —
+    used for the per-message model label and the usage analytics
+    breakdown. Kept in sync with which config value each provider branch
+    below actually sends as `model`/deployment name."""
     settings = get_settings()
-    provider = settings.generation_provider
+    if provider in ("azure_openai", "azure_foundry", "azure_v1"):
+        return settings.azure_openai_chat_deployment
+    if provider == "deepseek":
+        return settings.deepseek_model
+    if provider == "claude":
+        return settings.claude_model
+    return provider
+
+
+async def stream_answer(user_turn: str, provider: str | None = None) -> AsyncGenerator[str, None]:
+    settings = get_settings()
+    provider = provider or settings.generation_provider
 
     if provider == "azure_openai":
         async for token in _stream_azure_openai_compatible(user_turn):

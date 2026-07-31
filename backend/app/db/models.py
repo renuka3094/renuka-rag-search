@@ -86,6 +86,10 @@ class Message(Base):
     role: Mapped[str] = mapped_column(String(16))  # user | assistant | system
     content: Mapped[str] = mapped_column(Text)
     refused: Mapped[bool] = mapped_column(default=False)  # True when we returned the "not in KB" refusal
+    # model/token_counts are set only on assistant messages, for the usage analytics view
+    model: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    prompt_tokens: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    completion_tokens: Mapped[int | None] = mapped_column(Integer, nullable=True)
     created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     conversation: Mapped["Conversation"] = relationship(back_populates="messages")

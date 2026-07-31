@@ -1,6 +1,7 @@
 import { RefreshCw, Trash2, Upload } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import UsageAnalytics from "../components/UsageAnalytics";
 import { deleteDocument, listDocuments, reindexAll, reindexDocument, uploadDocument } from "../lib/api";
 
 const STATUS_PILL = {
@@ -123,6 +124,8 @@ export default function AdminPage() {
       )}
 
       <div className="scroll-region" style={{ flex: 1, padding: 24 }}>
+        <UsageAnalytics />
+        <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12 }}>Indexed documents</div>
         {loading ? (
           <div className="empty-state">Loading documents…</div>
         ) : documents.length === 0 ? (

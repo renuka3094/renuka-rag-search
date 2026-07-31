@@ -8,6 +8,11 @@ class ChatRequest(BaseModel):
         default=None, description="Omit to start a new conversation."
     )
     message: str = Field(min_length=1, max_length=4000)
+    provider: str | None = Field(
+        default=None,
+        description="Generation provider override for this message only "
+        "(e.g. 'azure_v1', 'deepseek'). Omit to use GENERATION_PROVIDER.",
+    )
 
 
 class CitationOut(BaseModel):
@@ -27,8 +32,22 @@ class MessageOut(BaseModel):
     role: str
     content: str
     refused: bool
+    model: str | None = None
     created_at: dt.datetime
     citations: list[CitationOut] = []
+
+
+class ModelUsageOut(BaseModel):
+    model: str
+    message_count: int
+    tokens: int
+
+
+class UsageAnalyticsOut(BaseModel):
+    conversations: int
+    questions: int
+    total_tokens: int
+    by_model: list[ModelUsageOut]
 
 
 class ChatResponse(BaseModel):

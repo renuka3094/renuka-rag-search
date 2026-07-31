@@ -64,16 +64,21 @@ export async function getConversation(id) {
   return handleJson(res);
 }
 
+export async function getUsageAnalytics() {
+  const res = await fetch(`${API_BASE}/api/v1/chat/analytics`, { headers: headers() });
+  return handleJson(res);
+}
+
 /**
  * Streams a chat answer via Server-Sent Events.
  * Calls onEvent(event) for every {type: "token"|"citations"|"done"} event
  * parsed from the stream. Returns nothing; caller drives UI from callback.
  */
-export async function streamChat({ conversationId, message }, onEvent) {
+export async function streamChat({ conversationId, message, provider }, onEvent) {
   const res = await fetch(`${API_BASE}/api/v1/chat/stream`, {
     method: "POST",
     headers: headers({ "Content-Type": "application/json" }),
-    body: JSON.stringify({ conversation_id: conversationId, message }),
+    body: JSON.stringify({ conversation_id: conversationId, message, provider }),
   });
 
   if (!res.ok || !res.body) {

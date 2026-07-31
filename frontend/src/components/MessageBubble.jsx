@@ -33,6 +33,12 @@ export default function MessageBubble({ message, onCitationClick }) {
           </div>
         </div>
 
+        {!isUser && message.model && !message.refused && (
+          <div style={{ fontSize: 11.5, color: "var(--text-tertiary)", paddingLeft: 2 }}>
+            {message.model}
+          </div>
+        )}
+
         {message.citations?.length > 0 && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {message.citations.map((c) => (
