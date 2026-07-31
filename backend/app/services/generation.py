@@ -218,10 +218,20 @@ def _parse_openai_sse_line(line: str) -> str | None:
         return None
     try:
         obj = json.loads(data)
-        delta = obj["choices"][0]["delta"]
-        return delta.get("content")
+        choice = obj["choices"][0]
     except (json.JSONDecodeError, KeyError, IndexError):
         return None
+
+    # A blocked response (Azure's content-safety layer, e.g. a jailbreak-
+    # risk classifier) ends the stream with finish_reason=content_filter
+    # and zero content deltas — surface this as a real error instead of
+    # silently yielding nothing, which left the UI showing a blank message
+    # bubble with no explanation.
+    if choice.get("finish_reason") == "content_filter":
+        detail = choice.get("content_filter_result", {}).get("error", {}).get("message")
+        raise UpstreamProviderError(detail or "Response blocked by content filter.")
+
+    return choice.get("delta", {}).get("content")
 
 
 async def _stream_claude(user_turn: str) -> AsyncGenerator[str, None]:
